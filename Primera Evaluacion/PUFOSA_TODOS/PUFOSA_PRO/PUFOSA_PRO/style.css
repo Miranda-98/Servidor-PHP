@@ -1,0 +1,124 @@
+:root {
+    --azul: #0000ff	;
+}
+
+body{
+    height: 1500px;
+    background-color: #00001a;
+    background-image: linear-gradient( #00001a,	#000080	);
+}
+
+h1{
+    color: white;
+}
+
+#k{
+    border: solid black 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:400px;
+    margin-left:-200px;
+    height:300px;
+    margin-top:-150px;
+    border:1px solid #808080;
+    padding:5px;
+    box-shadow: 0 15px 25px white;
+}
+
+#k {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  
+    background-color: #242026;
+   
+}
+
+::placeholder{
+    color: white;
+}
+
+#inputContrasena {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+
+#inputUsuario, #inputContrasena {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 30px;
+    color: white;
+}
+
+#botonRegistro {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+}
+
+#botonReset {
+    position: absolute;
+    top: 80%;
+    left: 60%;
+}
+
+#botonRegistro, #botonReset {
+    padding: 10px 20px;
+    color: blue;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border: 1px solid #8f7cec;
+    margin: auto;
+}
+
+#botonRegistro:hover, #botonReset:hover{
+    background: #8f7cec;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #3333ff, 0 0 25px #3333ff, 0 0 50px #3333ff, 0 0 100px #3333ff;
+}
+
+
+
+
+
+
+/* pagina empleados */
+#tablaCliente{
+    background: transparent;
+    width: 150px;
+    border: none;
+}
+
+
+/* mostrar tabla con formato */
+#tabla {
+    text-align: center;
+    color: white;
+}
+
+#divTabla {
+    /* position: absolute;
+    top: 40%;
+    left: 50%;
+    width:400px;
+    margin-left:-200px;
+    height:300px;
+    margin-top:-150px; */
+}
+
+#divTablaEmpleados {
+    /* position: absolute;
+    left: 50%;
+    width:1000px;
+    margin-left:-475px;
+    height: 100px;
+    margin-top: 50px; */
+}

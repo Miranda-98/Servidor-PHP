@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="preferencias.php">    
+        <label>nombre</label>
+        <input type="text" name="nombre">
+        <label>fondo</label>
+        <select name="fondo" id="colorFondo">
+            <option value="green">verde</option>
+            <option value="purple">morado</option>
+            <option value="blue">azul</option>
+            <option value="red">rojo</option>
+        </select>
+        <label>color letra</label>
+        <select name="letra" id="colorLetra">
+            <option value="red">rojo</option>
+            <option value="green">verde</option>
+            <option value="purple">morado</option>
+            <option value="blue">azul</option>            
+        </select>
+        <label>tipografia</label>
+        <select name="tipo" id="tipografia">
+            <option value="Arial">Arial</option>
+            <option value="Candara">Candara</option>
+            <option value="Monaco">Monaco</option>
+        </select><br/><br/>
+        <input type="submit" name="enviar" value="enviar">
+        <input type="reset" name="borrar" value="borrar">
+    </form>
+</body>
+</html>

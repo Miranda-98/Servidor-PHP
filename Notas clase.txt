@@ -1,0 +1,49 @@
+
+
+$_REQUEST -> Una matriz asociativa que por defecto contiene el contenido de $_GET , $_POST y $_COOKIE .
+
+//echo "<body onLoad=loginUsuarios.html;''>";
+$url = "loginUsuarios.html";
+echo "<SCRIPT>window.location='$url';</SCRIPT>";
+
+header(location)
+
+
+condicion ? true : false
+boleano = operador1 <=> operador2 -> si son iguales boleano vale true, sino vale false
+
+$GET['msg'] ?? "" -> si el get contien valor muestra el valor, si no no muestra nada
+
+if(empty() || empty()) {
+    header("location:limites.php"); -> me manda a limites.php
+    die();
+}
+
+if (menor > mayor) {
+    header("location:limites.php?msg='limites super ... inferior);
+    die();
+}
+
+header va con get porque se pasa la informacion por la url
+
+ echo "<form method='post' action='añadir.php'>
+                    <fieldset>
+                        <legend>Completa los campos:</legend>
+                        <input type='text' name='empleado' placeholder='Empleado_ID' required>
+                        <input type='text' name='apellido' placeholder='Apellido' required>
+                        <input type='text' name='nombre' placeholder='Nombre' required>
+                        <input type='text' name='inicial' placeholder='Inicial Segundo Apellido' required>
+                        <input type='select' name='trabajo' placeholder='Trabajo_ID' required>***667-672
+                        <input type='text' name='jefe' placeholder='Jefe ID' required>
+                        <input type='date' name='fechaContrato' placeholder='Fecha Contrato' required>
+                        <input type='text' name='salario' placeholder='Salario' required>
+                        <input type='text' name='comision' placeholder='Comision' required>
+                        <input type='text' name='departamento' placeholder='Departamento ID' required>****[10,12,13,14,20,23,24,30,34,40,43]
+                        <p><input type='submit' name='botonEnviarEmpleado' value='Enviar datos'></p>
+                    </fieldset>
+                </form>";
+
+
+
+
+----------------------------------TRABAJO NO LO ENCUNETRA AL INGRESAR EMPLEADOS-------------------------------------------------

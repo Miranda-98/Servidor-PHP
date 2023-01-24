@@ -1,0 +1,19 @@
+subir la primera vez
+1. crear repositorio
+2. git init 
+3. la primera linea que aparece al crear el repositorio (clone)
+4. la segunda linea que aparece al crear el repositorio (push)
+5. git add
+6. git commit
+7. git push
+
+subir el resto de veces
+5. git add
+6. git commit
+7. git push
+
+
+bajar del repositorio
+6. git init
+7. git clone direccion url
+8. git pull

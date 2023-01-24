@@ -1,0 +1,29 @@
+if ($result->num_rows > 0) { //mostrar todas las filas de las tablas
+            echo "<div ><table class='tabla'>
+                <tr>
+                <th>'publicacion'</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>direccion</td>
+                    <td>habitaciones</td>
+                    <td>baños</td>
+                    <td>imagenes</td>
+                </tr>";
+            while ($row = $result->fetch_assoc()) {
+                //echo "id: " . $row["id"] . " direccion: " . $row["direccion"] . " habitaciones: " . $row["habitaciones"] . " baños: " . $row["baños"] . " imagen: " . $row["imagenes"] . "<br>";
+                $aDatos = array("id"=>$row['id'],"direccion"=>$row['direccion'],"habitaciones"=>$row['habitaciones'],"baños"=>$row['baños'],"imagenes"=>$row['imagenes']);
+                //echo "<div>id publicacione: ".$aDatos['id']." direccion: ".$aDatos['direccion']." baños: ".$aDatos['baños']." imagenes: <img src='".$aDatos['imagenes']."' width='200px' height='200px'/></div>";
+                echo "<tr><td>".$aDatos['id']."</td>",
+                "<td>".$aDatos['direccion']."</td>",
+                "<td>".$aDatos['habitaciones']."</td>",
+                "<td>".$aDatos['baños']."</td>",
+                //"<td><img src='".$aDatos['imagenes']."' width='200px' height='200px'/></td></tr> ";
+                "<td id='img'>".$aDatos['imagenes']."</td>";
+                //echo "<script type='text/javascript> document.querySelector('table tr:last-child(2)').style.backgroundColor = 'pink'; </script>";
+            }
+           // $aDatos = [$row['id'],$row['direccion'],$row['habitaciones'],$row['baños'],$row['imagenes']];
+            //var_dump($aDatos);
+            //return $aDatos;
+            echo "<table/></div><br/>";
+

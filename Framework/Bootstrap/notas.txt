@@ -1,0 +1,6 @@
+bootstrap:
+npm install bootstrap@5.2.3
+npm install -g npm@9.2.0
+archivo scss 
+abrir live sass compiler los cambios de estilos de este archivo los aplica al css 
+en el html vincular el css y el js

@@ -1,0 +1,22 @@
+id nuevo cliente5 \ November 6, 2022, 11:17 pm 
+id nuevo cliente6 \ November 6, 2022, 11:32 pm 
+ id nuevo cliente7 \ November 6, 2022, 11:32 pm 
+ id nuevo cliente 8 \ November 6, 2022, 11:34 pm 
+ id nuevo cliente 9 \ November 6, 2022, 11:34 pm 
+  añadir nuevo cliente -> id 10 \ November 6, 2022, 11:35 pm 
+ 7499\  añadir nuevo cliente -> id 11 \ November 6, 2022, 11:45 pm 
+ 7839\  añadir nueva ubicacion -> ciudad Madrid \ November 11, 2022, 3:43 am 
+ 7839\ modificar trabajo -> trabajo 2 \ November 11, 2022, 3:49 am 
+  modificar trabajo -> trabajo 2 \ November 11, 2022, 3:49 am 
+  modificar trabajo -> trabajo 2 \ November 11, 2022, 3:49 am 
+  eliminar ubicacion -> ubicacion 1 \ November 11, 2022, 3:53 am 
+  añadir nuevo cliente -> id 0 \ November 11, 2022, 3:55 am 
+  añadir nuevo cliente -> id 1 \ November 11, 2022, 3:56 am 7839\  añadir nuevo cliente -> id a \ November 11, 2022, 12:09 pm 
+ 7839\  añadir nuevo cliente -> id 0 \ November 11, 2022, 12:11 pm 
+ eliminar cliente -> id 0 \ November 11, 2022, 12:23 pm 
+ \  eliminar cliente -> id 1 \ November 11, 2022, 12:24 pm 
+ \  eliminar cliente -> id 1 \ November 11, 2022, 12:25 pm 
+ \  eliminar cliente -> id 2 \ November 11, 2022, 12:26 pm 
+ 7839\ 7839\  eliminar cliente -> id 3 \ November 11, 2022, 12:28 pm 
+  modificar departamento -> nombre 9 \ November 14, 2022, 12:08 pm 
+ 

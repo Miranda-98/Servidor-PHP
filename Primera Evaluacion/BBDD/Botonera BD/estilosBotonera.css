@@ -1,0 +1,81 @@
+:root {
+    --fondo: #4C0033;
+    --fondoBoton: #AF0171;
+}
+
+
+body{
+    background-color: var(--fondo);
+}
+
+a {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 45%;
+    
+    text-decoration: none;
+    color: black;
+    background-color: var(--fondoBoton);
+    border-radius: 25%;
+    width: 120px;
+    height: 90px;
+    font-size: 25px;
+    text-align: center;
+}
+
+p{
+    display: flex;
+    margin: auto;
+}
+
+a:hover{
+    color: white;
+    transform: scale(1.5);
+	transition:  transform .5s;
+}
+
+table{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#insertaUsuario{
+    display: flex;
+    margin-top : 15%;
+    margin-left: 20%;
+    
+}
+
+#buscaUsuario{
+    display: flex;
+    margin-top: 15%;
+    margin-left: 40%;
+}
+
+#borraUsuario{
+    display: flex;
+    margin-top: 15%;
+    margin-left: 40%;
+}
+
+#botonEnviar{
+    display: flex;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+div  fieldset{
+    color: white;
+}
+
+input {
+}
+
+
+::placeholder{
+    
+}

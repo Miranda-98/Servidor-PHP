@@ -1,0 +1,11 @@
+$_SESION->forma de guardar datos de forma similar a las cookies pero se guardan en el servidor
+
+$_COOKIE->ficheros que guardan en el entorno del navegador
+    formas de ver cookies
+        -una cookie va asociada a un dominio en concreto, solo se pueden ver desde ese servidor
+        -se pueden ver desde el navegador
+    maximo de 20 cookies por dominio
+
+    invocar cookies->setcookies(nombre tiempoDeVida)
+    si no hay TTL la cookie se pierde al cerrar el navegador
+    para eliminar una cookie -> setcookie(nombre TTLnegativo)

@@ -1,0 +1,2 @@
+en el caso de poner el formulario dentro del mismo "html" se pone el script en la misma 
+pagina y en el action del form se pone la misma pagina, para que se llame a si misma

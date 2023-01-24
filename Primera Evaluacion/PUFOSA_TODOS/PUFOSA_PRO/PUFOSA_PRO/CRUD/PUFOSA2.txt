@@ -1,0 +1,7 @@
+Presidente\  añadir Ubicacion -> Ubicacion  \ November 14, 2022, 1:03 am 
+ Presidente\  añadir Ubicacion -> Ubicacion  \ November 14, 2022, 1:03 am 
+ Presidente\  eliminar Ubicacion -> Ubicacion  \ November 14, 2022, 1:04 am 
+ Presidente\  eliminar Ubicacion -> Ubicacion  \ November 14, 2022, 1:04 am 
+ Presidente\  añadir Cliente -> Cliente  \ November 14, 2022, 1:19 am 
+ Manager\  eliminar Cliente -> Cliente  \ November 14, 2022, 1:21 am 
+ 

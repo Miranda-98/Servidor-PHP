@@ -1,0 +1,19 @@
+7839\  añadir Cliente -> id 2  \ November 16, 2022, 1:00 am 
+ 7839\  añadir Cliente -> id 1  \ November 16, 2022, 1:07 am 
+ 672\  modificar  -> id   \ November 16, 2022, 1:07 am 
+ 7839\  modificar  -> id   \ November 16, 2022, 1:08 am 
+ 7654\  modificar  -> id   \ November 16, 2022, 1:09 am 
+ 7654\  modificar  -> id   \ November 16, 2022, 1:12 am 
+ 7654\  añadir Cliente -> id 2  \ November 16, 2022, 1:12 am 
+ 7654\  modificar  -> id 2  \ November 16, 2022, 1:13 am 
+ 7654\  borrar Cliente -> id 2  \ November 16, 2022, 1:13 am 
+ 7566\  añadir Cliente -> id 2  \ November 16, 2022, 1:14 am 
+ 7839\  añadir Cliente -> id 11  \ November 16, 2022, 8:38 am 
+ 7839\  añadir Cliente -> id 12  \ November 16, 2022, 8:40 am 
+ 7839\  añadir Cliente -> id 13  \ November 16, 2022, 8:40 am 
+ 7839\  añadir Cliente -> id 14  \ November 16, 2022, 8:41 am 
+ 7839\  añadir Cliente -> id 15  \ November 16, 2022, 8:41 am 
+ 7839\  añadir Cliente -> id 16  \ November 16, 2022, 8:42 am 
+ 7839\  añadir Cliente -> id 17  \ November 16, 2022, 8:42 am 
+ 7839\  añadir Cliente -> id 18  \ November 16, 2022, 8:43 am 
+ 

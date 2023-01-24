@@ -1,0 +1,8 @@
+npm install bootstrap@5.2.3
+crear index
+crear archivo scss -> @import "./node_modules/bootstrap/scss/bootstrap.scss"; para importar todo lo de bootstrap
+    si quiero algo en concreto solo importo dicha libreria
+abro el live sass compiler, esto me crea un archivo css y un css.map
+vincular el html al css <link rel="stylesheet" href="archivo.css"/>
+los cambios de estilos se aplican en el scss 
+vincular el js <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

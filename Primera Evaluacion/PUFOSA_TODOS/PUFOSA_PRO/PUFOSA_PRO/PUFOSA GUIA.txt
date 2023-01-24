@@ -1,0 +1,20 @@
+pagina login(pagina 1)
+	usuario->empleado_ID
+	contraseña->empleado_ID+Letra segundo apellido
+
+
+presidente y manager->admi->CRUD DE CUALQUIER TABLA
+los demas->CRUD SOLO DE LA TABLA CLIENTES
+(pagina 2, depende del usuario muestra un formulario u otro)
+
+
+cualquier modificación que altere la tabla de clientes debera quedar registrada 
+en un fichero LOG. dicho fichero solo podra ser visto por los admi
+(operación realizada,id empleado realiza la operación, fecha y hora de la operación)
+
+
+presidente->acceso a una pagina que contenga un listado de todos los departamentos
+inclutendo la ubicación, número de empleados que tiene, sueldo maximo, minimo y medio
+de cada departamento
+
+ 
