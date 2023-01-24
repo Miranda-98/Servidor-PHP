@@ -14,6 +14,7 @@
 <body>
     <table>
         <tr>
+            <td> </td>
             <td>ID</td>
             <td>TIPO</td>
             <td>ZONA</td>
@@ -25,6 +26,11 @@
             <td>Observaciones</td>
             <td>Fecha anuncio</td>
         </tr>
+        <?php 
+            require '../Controlador/cont_publicaciones.php'; 
+            $control_publicacion = new Controlador_Publicacion();
+            $control_publicacion->mostrarTabla()?>
+            <!-- mostrarTabla()->controlador -->
     </table>
 </body>
 </html>

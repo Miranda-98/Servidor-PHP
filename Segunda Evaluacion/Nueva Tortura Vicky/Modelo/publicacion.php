@@ -55,11 +55,48 @@
             }
         }
 
-        function mostrarPublicacion()
+        function eliminarAnuncio($id)
         {
+            try{
+                $cone = $this->conexion;
+                $sql = "DELETE FROM " . self::$TABLA . " WHERE id = :A";
+                $stmt = $cone->prepare($sql);
+                $stmt->bindParam(':A', $id);
+                $stmt->execute();
+            } catch (PDOException $e) {
+                echo "<br/>ERROR AL BORRAR PUBLICACION " . $e;
+            }
             
+
+        }
+
+        function mostraDatosPublicaciones()
+        {
+            $cone = $this->conexion;
+
+            //obtener todas las publicaciones
+            $sql = "SELECT id, tipo, zona, direccion, ndormitorios, precio, tamano, extras, observaciones, fecha_anuncio FROM ".self::$TABLA;
+            $publicaciones = $cone->query($sql);
+            foreach($publicaciones as $fila) {
+                echo "<tr>
+                        <td><a href=''>Borrar</a><br/><a href=''>Modificar</a></td>
+                        <td>" . $fila['id'] . "</td>
+                        <td>" . $fila['tipo'] . "</td>
+                        <td>" . $fila['zona'] . "</td>
+                        <td>" . $fila['direccion'] . "</td>
+                        <td>" . $fila['ndormitorios'] . "</td>
+                        <td>" . $fila['precio'] . "</td>
+                        <td>" . $fila['tamano'] . "</td>
+                        <td>" . $fila['extras'] . "</td>
+                        <td>" . $fila['observaciones'] . "</td>
+                        <td>" . $fila['fecha_anuncio'] . "</td>
+                    </tr>";
+            }
+
+
         }
     }
+
 
     $publi = new Publicacion('inmobiliaria');
     $publi->crearAnuncio('Piso', 'Centro', 'artesanos', '2', 200000, 150, 'Garage', 'no hay observaciones', '2023-01-23');
