@@ -2,15 +2,18 @@
     require '../Modelo/publicacion.php';
 
     class Controlador_Publicacion{
-        function mostrarTabla(){
+        function eliminarPublicacion($id){
             $llamadaControlador = new Publicacion('inmobiliaria');
-            $llamadaControlador->mostraDatosPublicaciones();
+            $llamadaControlador->eliminarAnuncio($id);
         }
+    }
+    $llamadaControlador = new Publicacion('inmobiliaria');
 
-        function eliminarPublicacion(){
-            $llamadaControlador = new Publicacion('inmobiliaria');
-            $llamadaControlador->eliminarAnuncio(2);
-        }
+    echo 'valor -> ' . $_GET['valor'] . '<br>';
+    echo 'id -> ' . $_GET['id'] . '<br>';
+    if(isset($_GET['valor']) == 'borrar'){
+        $llamadaControlador->eliminarAnuncio($_GET['id']);
+        header('location: ../Vista/mostrarPublicaciones.php');
     }
     
 ?>

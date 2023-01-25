@@ -27,8 +27,8 @@
             <td>Fecha anuncio</td>
         </tr>
         <?php 
-            require '../Controlador/cont_publicaciones.php'; 
-            $control_publicacion = new Controlador_Publicacion();
+            require '../Controlador/controlador_vista.php'; 
+            $control_publicacion = new Controlador_Vistas();
             $control_publicacion->mostrarTabla()?>
             <!-- mostrarTabla()->controlador -->
     </table>

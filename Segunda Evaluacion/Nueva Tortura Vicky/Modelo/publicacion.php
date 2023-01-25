@@ -78,12 +78,14 @@
             $sql = "SELECT id, tipo, zona, direccion, ndormitorios, precio, tamano, extras, observaciones, fecha_anuncio FROM ".self::$TABLA;
             $publicaciones = $cone->query($sql);
             foreach($publicaciones as $fila) {
+                $idSeleccionado = $fila['id'];
+
                 echo "<tr>
-                        <td><a href=''>Borrar</a><br/><a href=''>Modificar</a></td>
+                        <td><button id='borrar'>BORRAR</button></td>
+                        <td><a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar'>Borrar</a><br/><a href=''>Modificar</a></td>
                         <td>" . $fila['id'] . "</td>
                         <td>" . $fila['tipo'] . "</td>
                         <td>" . $fila['zona'] . "</td>
-                        <td>" . $fila['direccion'] . "</td>
                         <td>" . $fila['ndormitorios'] . "</td>
                         <td>" . $fila['precio'] . "</td>
                         <td>" . $fila['tamano'] . "</td>
@@ -98,7 +100,7 @@
     }
 
 
-    $publi = new Publicacion('inmobiliaria');
-    $publi->crearAnuncio('Piso', 'Centro', 'artesanos', '2', 200000, 150, 'Garage', 'no hay observaciones', '2023-01-23');
+    //$publi = new Publicacion('inmobiliaria');
+    //$publi->crearAnuncio('Piso', 'Centro', 'artesanos', '2', 200000, 150, 'Garage', 'no hay observaciones', '2023-01-23');
     // $publi->crearAnuncio(11,"Piso","Centro","artesanos","2",20000,150,"Garage","no hay observaciones","2023-01-23");
 ?>
