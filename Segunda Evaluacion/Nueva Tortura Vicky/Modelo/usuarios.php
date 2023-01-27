@@ -40,9 +40,9 @@ class Usuario extends Conexion
             fclose($archivo);
 
             //$contraseñaAleatoria = self::contra();
-            $contraseñaAleatoria =password_hash(self::randomPass(), PASSWORD_DEFAULT);
+            $contraseñaAleatoria = password_hash(self::randomPass(), PASSWORD_DEFAULT);
             $cone = $this->conexion;
-            $sql = "INSERT INTO ".self::$TABLA ."(id_usuario, password) VALUES (:A, :B)";
+            $sql = "INSERT INTO " . self::$TABLA . "(id_usuario, password) VALUES (:A, :B)";
             $stmt = $cone->prepare($sql);
             $stmt->bindParam(':A', $nombre);
             $stmt->bindParam(':B', $contraseñaAleatoria);
@@ -55,25 +55,39 @@ class Usuario extends Conexion
 
     function eliminarUsuario($nombre)
     {
-        try{
+        try {
             $cone = $this->conexion;
-            $sql = "DELETE FROM ". self::$TABLA ." WHERE id_usuario = :A";
+            $sql = "DELETE FROM " . self::$TABLA . " WHERE id_usuario = :A";
             $stmt = $cone->prepare($sql);
             $stmt->bindParam(':A', $nombre);
             $stmt->execute();
             echo "<br/>eliminado";
         } catch (PDOException $e) {
-            echo "<br/>ERROR AL ELIMINAR USUARIO " . $e->getMessage(); 
+            echo "<br/>ERROR AL ELIMINAR USUARIO " . $e->getMessage();
         }
     }
 
-   
+    function controlUsuarios($id_login, $pass_login)
+    {
+        try {
+            $cone = $this->conexion;
+            $sql = "SELECT COUNT(*) AS 'cantidad' FROM usuarios WHERE id_usuario = '" . $id_login . "' AND password = '" . $pass_login . "'";
+            $resultado = $cone->query($sql);
+            $num = $resultado->fetch();
+            echo "el gran pepe dice: " . $num['cantidad'];
+            if ($num['cantidad'] > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo "<br/>ERROR AL COMPROBAR EL USUARIO";
+        }
+    }
 }
 
-    $user01 = new Usuario('inmobiliaria');
+$user01 = new Usuario('inmobiliaria');
     // $user01->crearUsuario('miranda2');
     // $user01->crearUsuario('miranda3');
     // $user01->crearUsuario('miranda4');
     // $user01->eliminarUsuario('pepe');
-
-?>
