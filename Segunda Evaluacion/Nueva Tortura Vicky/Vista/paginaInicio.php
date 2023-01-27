@@ -12,6 +12,11 @@
         border: solid black 1px;
     }
 </style>
+<?php
+    // $expire = time() + (30 * 24 * 60 * 60); 
+    // $date2 = date("Y-m-d H:i:s");
+    // setCookie('datosUltimaConexion', $date2, $expire);//expira en 30 días
+?>
 
 <body>
     <table style="border: solid black 1px">
@@ -23,6 +28,7 @@
             <td>Mostdar Publicaciones</td>
             <td>Cerrar Sesion</td>
             <td>Bienvenido @adminitdador</td>
+            <td><a href="loginUsuarios.html">Cerrar Sesion</a></td>
         </tr>
         <tr>
             <td></td>
@@ -30,7 +36,11 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>Datos ultima conexion</td>
+            <td></td>
+            <!-- <td>
+                <?php echo $_COOKIE['datosUltimaConexion']; ?>
+            </td> -->
+            <td><?php echo $_GET['cookie'];?></td>
         </tr>
 
     </table>
