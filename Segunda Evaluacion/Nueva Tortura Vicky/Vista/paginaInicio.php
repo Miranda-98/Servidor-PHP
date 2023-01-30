@@ -43,6 +43,11 @@
             <td><?php echo $_GET['cookie'];?></td>
         </tr>
 
+        <div>
+            <div><a href="../Vista/paginaPublicaciones.php">Publicaciones</a></div>
+            <div><a href="">Usuarios</a></div>
+        </div>
+
     </table>
 
 </body>

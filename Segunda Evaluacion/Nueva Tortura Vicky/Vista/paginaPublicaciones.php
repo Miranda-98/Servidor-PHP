@@ -26,10 +26,14 @@
             <td>Observaciones</td>
             <td>Fecha anuncio</td>
         </tr>
+
+        <a href="busquedaPublicaciones.html">Filtrar resultados</a>
+
         <?php 
             require '../Controlador/controlador_vista.php'; 
             $control_publicacion = new Controlador_Vistas();
-            $control_publicacion->mostrarTabla()?>
+            $control_publicacion->mostrarTabla()
+        ?>
             <!-- mostrarTabla()->controlador -->
     </table>
 </body>
