@@ -10,6 +10,10 @@
     table, td {
         border: solid black 1px;
     }
+    img {
+        width: 100px;
+        height: 100px;
+    }
 </style>
 <body>
     <table>
@@ -23,11 +27,12 @@
             <td>Precio</td>
             <td>Tamaño</td>
             <td>Extras</td>
+            <td>Fotos</td>
             <td>Observaciones</td>
             <td>Fecha anuncio</td>
         </tr>
 
-        <a href="busquedaPublicaciones.html">Filtrar resultados</a>
+        <a href="busquedaPublicaciones.php">Filtrar resultados</a>
 
         <?php 
             require '../Controlador/controlador_vista.php'; 

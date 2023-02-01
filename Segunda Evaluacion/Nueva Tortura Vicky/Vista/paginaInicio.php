@@ -28,8 +28,8 @@
             <td>Mostdar Publicaciones</td>
             <td>Cerrar Sesion</td>
             <td>Bienvenido @adminitdador</td>
-            <td><a href="loginUsuarios.html">Cerrar Sesion</a></td>
-        </tr>
+            <td><a href="../Modelo/logOut.php">Cerrar Sesion</a></td>
+           
         <tr>
             <td></td>
             <td></td>
@@ -42,14 +42,11 @@
             </td> -->
             <td><?php echo $_GET['cookie'];?></td>
         </tr>
-
-        <div>
-            <div><a href="../Vista/paginaPublicaciones.php">Publicaciones</a></div>
-            <div><a href="">Usuarios</a></div>
-        </div>
-
     </table>
-
+    <div>
+        <div><a href="../Vista/paginaPublicaciones.php">Publicaciones</a></div>
+        <div><a href="">Usuarios</a></div>
+    </div>
 </body>
 
 </html>

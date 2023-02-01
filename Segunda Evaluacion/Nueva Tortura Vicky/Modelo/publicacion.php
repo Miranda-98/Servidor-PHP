@@ -75,7 +75,12 @@
             $cone = $this->conexion;
 
             //obtener todas las publicaciones
-            $sql = "SELECT id, tipo, zona, direccion, ndormitorios, precio, tamano, extras, observaciones, fecha_anuncio FROM ".self::$TABLA;
+            // SELECT * FROM viviendas
+	        // INNER JOIN fotos WHERE viviendas.id = fotos.id_vivienda
+            // $sql = "SELECT id, tipo, zona, direccion, ndormitorios, precio, tamano, extras, observaciones, fecha_anuncio FROM ".self::$TABLA;
+            $sql = "SELECT viviendas.id, viviendas.tipo, viviendas.zona, viviendas.direccion, viviendas.ndormitorios, viviendas.precio, 
+                viviendas.tamano, viviendas.extras, fotos.foto, viviendas.observaciones, viviendas.fecha_anuncio FROM " . self::$TABLA . " INNER JOIN fotos WHERE viviendas.id = fotos.id_vivienda
+                ORDER BY viviendas.fecha_anuncio DESC";
             $publicaciones = $cone->query($sql);
             foreach($publicaciones as $fila) {
                 $idSeleccionado = $fila['id'];
@@ -90,6 +95,7 @@
                         <td>" . $fila['precio'] . "</td>
                         <td>" . $fila['tamano'] . "</td>
                         <td>" . $fila['extras'] . "</td>
+                        <td> <img src=../img/" . $fila['foto'] ."></td>
                         <td>" . $fila['observaciones'] . "</td>
                         <td>" . $fila['fecha_anuncio'] . "</td>
                     </tr>";
@@ -97,7 +103,145 @@
 
 
         }
+
+        function filtrarPublicaciones()
+        {
+            try{
+                $sql = '-';
+
+                if(isset($_GET['buscar'])) {
+                    $sql = "SELECT * FROM viviendas WHERE ";
+                    //recoger el tipo de piso del formulario
+                    if(isset($_GET['tipo']))
+                        $sql = $sql . " tipo = '" . $_GET['tipo'] ."'";
+        
+                    //recoger la zona del formulario
+                    if(isset($_GET['zona']))
+                        $sql = $sql . " AND zona = '" . $_GET['zona'] ."'";
+        
+                    //recoger el número de habitaciones del formulario
+                    if(isset($_GET['nHabitaciones']))
+                        $sql = $sql . " AND ndormitorios = '" . $_GET['nHabitaciones'] ."'";
+        
+                    //recoger el precio del formulario
+                    if(isset($_GET['precio']))
+                        if($_GET['precio'] < 100000)
+                            $sql = $sql . " AND precio < 100000";
+                        else if($_GET['precio'] >= 100000 && $_GET['precio'] < 200000)
+                            $sql = $sql . " AND precio BETWEEN 100000 AND 200000";
+                        else if($_GET['precio'] >= 200000 && $_GET['precio'] < 300000)
+                            $sql = $sql . " AND precio BETWEEN 200000 AND 300000";
+                        else    
+                            $sql = $sql . " AND precio > 300000";
+        
+                    //recoger los extras del formulario
+                    if(!isset($_GET['garage']) && !isset($_GET['piscina']) && !isset($_GET['jardin'])){
+                        echo "NO HAY EXTRAS";
+        
+                    } else {
+                        $ex = '';
+                        if(isset($_GET['piscina'])){
+                            $ex = $_GET['piscina'];
+                        } 
+
+                        if(isset($_GET['piscina']) && isset($_GET['jardin'])){
+                            $ex = $ex . "," . $_GET['jardin'];
+                        } else {
+                            $ex = $ex . "". $_GET['jardin'];
+                        }
+
+                        if(isset($_GET['garage']) && (isset($_GET['piscina']) || isset($_GET['jardin'])) || isset($_GET['garage'])){
+                            $ex = $ex . "," . $_GET['garage'];
+                        } else {
+                            $ex = $ex . "". $_GET['garage'];
+                        }
+                    
+                        $sql = $sql . " AND extras = '$ex";
+                        $sql = $sql . "'";
+                    }
+                
+                }
+        
+        
+        
+            $c = new Conexion('inmobiliaria');
+            $conecta = $c->conectar();
+            $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo $sql;
+            $result = $conecta->query($sql);
+        
+        
+            echo "<table border=solid black 1px>
+                <th colspan=11>TABLA CLIENTE</th>
+                            <tr>
+                                <td>ID</td>
+                                <td>TIPO</td>
+                                <td>ZONA</td>
+                                <td>DIRECCION</td>
+                                <td>DORMITORIOS</td>
+                                <td>PRECIO</td>
+                                <td>TAMAÑO</td>
+                                <td>EXTRAS</td>
+                                <td>OBSERVACIONES</td>
+                                <td>FECHA ANUNCIO</td>
+                            </tr>";
+        
+            foreach ($result as $fila) {
+                echo " <tr>
+                    <td>" . $fila['id'] . "</td>",
+                    "<td>" . $fila['tipo'] . "</td>",
+                    "<td>" . $fila['zona'] . "</td>",
+                    "<td>" . $fila['direccion'] . "</td>",
+                    "<td>" . $fila['ndormitorios'] . "</td>",
+                    "<td>" . $fila['precio'] . "</td>",
+                    "<td>" . $fila['tamano'] . "</td>",
+                    "<td>" . $fila['extras'] . "</td>",
+                    "<td>" . $fila['observaciones'] . "</td>",
+                    "<td>" . $fila['fecha_anuncio'] . "</td></tr>";
+            }
+        
+                echo "</table>";
+            } catch (PDOException $e) {
+                echo "<br/> ERROR AL BUSCAR VIVIENDA " . $e->getMessage();
+            }
+        }
+
+
+        
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //$tipo, $zona, $direccion, $ndormitorios, $precio, $tamano, $extras, $observaciones, $fecha_anuncio
