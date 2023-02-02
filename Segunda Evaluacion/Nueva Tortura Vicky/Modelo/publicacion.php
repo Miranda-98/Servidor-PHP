@@ -160,7 +160,7 @@
             */
             if(isset($_GET['pgnActual'])){
                 if($_GET['pgnActual']==1){
-                    header("Location:publicacion.php");
+                    header("Location:publicaciones.php");
                 } else {
                     $paginaActual = $_GET['pgnActual'];
                 }
@@ -175,16 +175,16 @@
             //$sqlPaginacion = "SELECT * FROM viviendas LIMIT $paginacion,$limite";
             
             // sql con fotos 
+            /*
             $sql = "SELECT viviendas.id as total_id, viviendas.tipo, viviendas.zona, viviendas.direccion, viviendas.ndormitorios, viviendas.precio, 
-            viviendas.tamano, viviendas.extras, fotos.foto, viviendas.observaciones, viviendas.fecha_anuncio FROM viviendas INNER JOIN fotos 
-            WHERE viviendas.id = fotos.id_vivienda ORDER BY viviendas.fecha_anuncio DESC LIMIT $paginacion,$limite";
-            
+            viviendas.tamano, viviendas.extras, fotos.foto, viviendas.observaciones, viviendas.fecha_anuncio FROM viviendas INNER JOIN fotos WHERE viviendas.id = fotos.id_vivienda ORDER BY viviendas.fecha_anuncio DESC LIMIT $paginacion,$limite";
+            */
 
             // sql sin fotos
-            /*
+            
                 $sql = "SELECT viviendas.id as total_id, viviendas.tipo, viviendas.zona, viviendas.direccion, viviendas.ndormitorios, viviendas.precio, 
                 viviendas.tamano, viviendas.extras, viviendas.observaciones, viviendas.fecha_anuncio FROM " . self::$TABLA . " LIMIT $paginacion,$limite";
-            */
+            
             echo $sql;
 
             // sql cantidad de registros
@@ -360,7 +360,25 @@
         }
 
 
-        
+        function tablaFotos(){
+            $cone = $this->conexion;
+            $sql = "SELECT * FROM fotos ORDER BY id_vivienda";
+            $publicaciones = $cone->query($sql);
+            $array = $publicaciones->fetchAll(PDO::FETCH_ASSOC);
+            echo "<pre>";
+            print_r($array);
+            echo "</pre>";
+            // echo "<table border: solid black 1px>";
+            // foreach($publicaciones as $fila) {
+            //     echo "s<style>img{width:100px;heigth:100px}</style>";
+            //     echo "<tr>
+            //             <td>" . $fila['id'] . "</td>
+            //             <td>" . $fila['id_vivienda'] . "</td>
+            //             <td> <img src=../img/" . $fila['foto'] ."></td>
+            //         </tr>";
+            // }
+            // echo "<table/>";
+        }
 
 
     }
@@ -399,6 +417,7 @@
 
     //$tipo, $zona, $direccion, $ndormitorios, $precio, $tamano, $extras, $observaciones, $fecha_anuncio
     $publi = new Publicacion('inmobiliaria');
+    $publi->tablaFotos();
     //$publi->mostraDatosPublicacionesPaginacionSI();
     //$publi->mostraDatosPublicaciones();
     // $publi->crearAnuncio('Piso', 'Centro', 'aaaa', '1', 90000, 150, 'Piscina', 'no hay observaciones', '2023-01-23');

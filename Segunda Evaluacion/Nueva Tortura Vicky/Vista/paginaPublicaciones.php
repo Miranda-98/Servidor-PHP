@@ -19,6 +19,7 @@
     <table>
         <tr>
             <td> </td>
+            <td> </td>
             <td>ID</td>
             <td>TIPO</td>
             <td>ZONA</td>
