@@ -5,7 +5,7 @@
     class Controlador_Vistas{
         function mostrarTabla(){
             $llamadaControlador = new Publicacion('inmobiliaria');
-            $llamadaControlador->mostraDatosPublicaciones();
+            $llamadaControlador->mostraDatosPublicacionesPaginacionSI();
         }
 
         function buscadorPublicaciones(){
