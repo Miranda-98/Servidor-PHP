@@ -62,8 +62,8 @@
 </body>
 </html>
 <?php
-// require '../Modelo/conexion.php';
-    require '../Controlador/controlador_vista.php'; 
-    $control_publicacion = new Controlador_Vistas();
-    $control_publicacion->buscadorPublicaciones()
+    // require '../Controlador/controlador_vista.php'; 
+    // $control_publicacion = new Controlador_Vistas();
+    // $control_publicacion->buscadorPublicaciones()
+    
 ?>

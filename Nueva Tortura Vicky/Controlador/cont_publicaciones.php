@@ -13,7 +13,7 @@
     echo 'id -> ' . $_GET['id'] . '<br>';
     if(isset($_GET['valor']) == 'borrar'){
         $llamadaControlador->eliminarAnuncio($_GET['id']);
-        header('location: ../Vista/mostrarPublicaciones.php');
+        header('location: controlador_vista.php?valor=mostrarTabla');
     }
     
 ?>

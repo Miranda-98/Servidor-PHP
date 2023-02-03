@@ -103,7 +103,7 @@
             $sql = "SELECT viviendas.id as total_id, tipo, zona, direccion, ndormitorios, precio, tamano, extras, observaciones,
                      fecha_anuncio, GROUP_CONCAT(fotos.foto SEPARATOR ',') AS fotos
                     FROM " . self::$TABLA . " LEFT OUTER JOIN fotos on viviendas.id = fotos.id_vivienda GROUP BY viviendas.id
-                    LIMIT $paginacion,$limite";
+                    ORDER BY viviendas.fecha_anuncio DESC LIMIT $paginacion,$limite";
 
             $sqlCantidad = "SELECT COUNT(*) as cantidad FROM (SELECT viviendas.*, GROUP_CONCAT(fotos.foto) AS fotos
               FROM viviendas LEFT OUTER JOIN fotos ON viviendas.id = fotos.id_vivienda GROUP BY viviendas.id ) AS subconsulta";
@@ -115,26 +115,6 @@
             $nRegistros = $cone->query($sqlCantidad);
             $num = $nRegistros->fetch();
 
-            echo "<style>table,tr,td{border:solid black 1px}img{width: 40px; height: 40px}td{width:100px;}</style>
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>id</td>
-                        <td>tipo</td>
-                        <td>zona</td>
-                        <td>nDormitorios</td>
-                        <td>precio</td>
-                        <td>tamaño</td>
-                        <td>extras</td>
-                        <td>foto</td>
-                        <td>observaciones</td>
-                        <td>fecha anuncio</td>
-                    </tr>";
-
-
-                
-
                     foreach($publicaciones as $fila) {
                     
 
@@ -143,9 +123,11 @@
                  
                     $aFotos = explode(',',$fila['fotos']);
                     
-                    echo "<tr>
-                            <td><button id='borrar'>BORRAR</button></td>
-                            <td><a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar'>Borrar</a><br/><a href=''>Modificar</a></td>
+                    echo "<tr><td><button id='borrar'>BORRAR</button></td>
+                            <td>
+                                <a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar'>Borrar</a><br/>
+                                <a href=''>Modificar</a>
+                            </td>
                             <td>" . $fila['total_id'] . "</td>
                             <td>" . $fila['tipo'] . "</td>
                             <td>" . $fila['zona'] . "</td>
@@ -164,7 +146,6 @@
    
             }
 
-            echo "</table>";
 
              /*
                 crear las páginas según la cantidad de registros existentes y la cantidad
@@ -179,6 +160,8 @@
                 else 
                     echo "<a href='?pgnActual=".$i."'>".$i."</a> ";
             }  
+
+            return $publicaciones;
 
         }
 
@@ -226,7 +209,7 @@
                     //recoger los extras del formulario
                     if(!isset($_GET['garage']) && !isset($_GET['piscina']) && !isset($_GET['jardin'])){
                         echo "NO HAY EXTRAS";
-                        $sql = $sql . "  GROUP BY viviendas.id";
+                        $sql = $sql . "  GROUP BY viviendas.id ORDER BY viviendas.fecha_anuncio DESC";
                     } else {
                         $ex = '';
                         if(isset($_GET['piscina'])){
@@ -253,7 +236,7 @@
                         // }
                     
                         $sql = $sql . " AND extras = '$ex";
-                        $sql = $sql . "'  GROUP BY viviendas.id";
+                        $sql = $sql . "'  GROUP BY viviendas.id ORDER BY viviendas.fecha_anuncio DESC";
                     }
                 
                 }
@@ -270,8 +253,6 @@
             echo "<style>table,tr,td{border:solid black 1px}img{width: 40px; height: 40px}td{width:100px;}</style>
                 <table>
                     <tr>
-                        <td></td>
-                        <td></td>
                         <td>id</td>
                         <td>tipo</td>
                         <td>zona</td>
@@ -359,6 +340,8 @@
 
     //$tipo, $zona, $direccion, $ndormitorios, $precio, $tamano, $extras, $observaciones, $fecha_anuncio
     $publi = new Publicacion('inmobiliaria');
+    // $publi->mostraDatosPublicaciones();
+
     // $publi->crearAnuncio('Piso', 'Centro', 'aaaa', '1', 90000, 150, 'Piscina', 'no hay observaciones', '2023-01-23');
     // $publi->crearAnuncio('Piso', 'Centro', 'aaaa', '1', 100000, 150, 'Piscina', 'no hay observaciones', '2023-01-23');
     // $publi->crearAnuncio('Piso', 'Centro', 'aaaa', '1', 120000, 150, 'Garage', 'no hay observaciones', '2023-01-23');

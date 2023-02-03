@@ -2,7 +2,12 @@
 añadir nuevo usuario -> nombre: miranda4 - contraseña: usuarios 
  añadir nuevo usuario -> nombre: miranda5 - contraseña: usuarios 
  añadir nuevo usuario -> nombre: miranda - contraseña: EoW&zM_U9Dvd 
- añadir nuevo usuario -> nombre: miranda2 - contraseña: 7-FVsg@kKtOC 
- añadir nuevo usuario -> nombre: miranda3 - contraseña: 472rNE)zlZQ* 
- añadir nuevo usuario -> nombre: miranda4 - contraseña: Vl3rx5^0p7Dz 
+ 
+ añadir nuevo usuario -> nombre: miranda2 - contraseña: u#h_^72swte3 
+ añadir nuevo usuario -> nombre: miranda3 - contraseña: &0L-VB2eiY!y 
+ añadir nuevo usuario -> nombre: miranda4 - contraseña: 4cBS)M4OP+oj 
+ añadir nuevo usuario -> nombre: pepa - contraseña: y9o-$B6MhVwB 
+ añadir nuevo usuario -> nombre: pepa - contraseña: ^3w0IAMBg%9o 
+ añadir nuevo usuario -> nombre: admin - contraseña: NZ6n*v2cHM8A 
+ añadir nuevo usuario -> nombre: admin - contraseña: Dt1XEZK*)IUT 
  

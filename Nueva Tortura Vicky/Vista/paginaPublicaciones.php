@@ -17,6 +17,7 @@
 </style>
 <body>
     <table>
+        <th colspan=12>Tabla Viviendas</th>
         <tr>
             <td> </td>
             <td>ID</td>
@@ -32,12 +33,14 @@
             <td>Fecha anuncio</td>
         </tr>
 
-        <a href="busquedaPublicaciones.php">Filtrar resultados</a>
+        <!-- <a href="busquedaPublicaciones.php">Filtrar resultados</a> -->
+       
 
         <?php 
-            require '../Controlador/controlador_vista.php'; 
-            $control_publicacion = new Controlador_Vistas();
-            $control_publicacion->mostrarTabla()
+        
+            $publicacion = new Publicacion('inmobiliaria');
+            $publicacion->mostraDatosPublicaciones();
+
         ?>
             <!-- mostrarTabla()->controlador -->
     </table>
