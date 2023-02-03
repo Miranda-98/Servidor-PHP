@@ -1,0 +1,10 @@
+al entrar en la aplicacion el index comprueba que exista la sesion
+si existe me manda al controlador cont_generico, si no existe me manda al loginUsuarios
+caso 1, existe la sesion: 
+    - si existe la sesion se llama al cont_generico, en el cont_generico se comprueba que los datos del formulario 
+    son validos, si no lo son se redirige al loginUsuarios y no se le deja salir de ahí hasta que los datos sean validos
+    - una vez que los datos son validos se le manda a paginaInicio y se crea la cookie almacenando la ultima conexion 
+    al entrar en la paginaInicio
+    (el cont_generico me manda a la pagina principal de la web)
+caso 2, no existe la sesion:
+    se redirige al usuario al login para que para que se logue, lo que crea la sesion y se le redirige al index
