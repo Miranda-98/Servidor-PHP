@@ -33,7 +33,7 @@ class Usuario extends Conexion
             if (!$archivo) {
                 echo "error al abrir el fichero";
             } else {
-                $escribe = "añadir nuevo usuario -> nombre: " . $nombre . " - contraseña: " . $contraseñaAleatoria . " \n ";
+                $escribe = "añadir nuevo usuario -> nombre: " . $nombre . " - contraseña: " . '1234' . " \n ";
                 echo self::randomPass();
                 fwrite($archivo, $escribe);
                 rewind($archivo);
@@ -43,7 +43,7 @@ class Usuario extends Conexion
 
             //$contraseñaAleatoria = self::randomPass();
             echo $contraseñaAleatoria;
-            $contraseñaAleatoria = password_hash($contraseñaAleatoria, PASSWORD_DEFAULT);
+            $contraseñaAleatoria = password_hash('1234', PASSWORD_DEFAULT);
             $cone = $this->conexion;
             $sql = "INSERT INTO " . self::$TABLA . "(id_usuario, password) VALUES (:A, :B)";
             $stmt = $cone->prepare($sql);

@@ -27,8 +27,14 @@
     } else if(isset($_POST['botonUsuarios'])) {
         include '../Vista/administracionUsuarios.html';
     } else if(isset($_POST['botonFiltrar'])) {
-        include '../Vista/busquedaPublicaciones.php';
-    } else {
+        echo "<h1>pepeweeeeeeeeeeeeeeeeeeeeee</h1>";
+        //include '../Vista/busquedaPublicaciones.php';
+        header('location: ../Vista/busquedaPublicaciones.php');
+    } else if(isset($_POST['añadirPublicacion'])) {
+        // include 'añadirPublicacion.php';
+        header('location: ../Vista/añadirPublicacion.php');
+    }
+    else {
         include '../Vista/paginaPublicaciones.php';
     }
 

@@ -171,7 +171,7 @@ require '../Modelo/conexion.php';
     $conecta = $c->conectar();
     $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo $sql;
-    $result = $conecta  ->query($sql);
+    $result = $conecta ->query($sql);
     
 
     echo "<table border=solid black 1px>

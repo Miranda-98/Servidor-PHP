@@ -102,7 +102,7 @@
             */
             $sql = "SELECT viviendas.id as total_id, tipo, zona, direccion, ndormitorios, precio, tamano, extras, observaciones,
                      fecha_anuncio, GROUP_CONCAT(fotos.foto SEPARATOR ',') AS fotos
-                    FROM " . self::$TABLA . " LEFT OUTER JOIN fotos on viviendas.id = fotos.id_vivienda GROUP BY viviendas.id
+                    FROM " . self::$TABLA . " LEFT OUTER JOIN fotos ON viviendas.id = fotos.id_vivienda GROUP BY viviendas.id
                     LIMIT $paginacion,$limite";
 
             $sqlCantidad = "SELECT COUNT(*) as cantidad FROM (SELECT viviendas.*, GROUP_CONCAT(fotos.foto) AS fotos
@@ -257,6 +257,7 @@
                 $c = new Conexion('inmobiliaria');
                 $conecta = $c->conectar();
                 $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo '<h1>pepepepepepepepepe</h1>';
                 echo $sql;
                 $result = $conecta->query($sql);
             

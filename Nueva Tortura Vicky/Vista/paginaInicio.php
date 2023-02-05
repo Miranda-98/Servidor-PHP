@@ -8,8 +8,7 @@
     <title>Pagina Inicio</title>
 </head>
 <style>
-    table,
-    td {
+    table, td {
         border: solid black 1px;
     }
 </style>
@@ -41,7 +40,7 @@
             <!-- <td>
                 <?php echo $_COOKIE['datosUltimaConexion']; ?>
             </td> -->
-            <td><?php echo $_GET['cookie']; ?></td>
+            <td><?php echo $_COOKIE['datosUltimaConexion']; ?></td>
         </tr>
      </table>
 
@@ -54,12 +53,14 @@
                 <div><button name='botonTablas'>Publicaciones</button></div>
                 <div><button name='botonUsuarios'>Usuario</button></div>
                 <div><button name='botonFiltrar'>Filtrar Publicaciones</button></div>
+                <div><button name='añadirPublicacion'>Añadir Publicaciones</button></div>
+
             </form>
 
         </div>
 
         <?php
-        include '../Controlador/controlador_vista.php';
+            include '../Controlador/controlador_vista.php';
         ?>
         </table>
         </body>

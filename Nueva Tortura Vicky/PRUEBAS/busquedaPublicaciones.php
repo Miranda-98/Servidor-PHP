@@ -8,8 +8,7 @@
 </head>
 <body>
     <h1>Buscador de publicaciones</h1>
-    <button><a href="paginaInicio.php">Volver a la pagina de inicio</a></button>
-    <form method="GET" >
+    <form method="POST" action="">
         <fieldset>
             <legend>Introduzca los datos de las viviendas a buscar</legend>
             <label>Tipo de vivienda: </label>
@@ -59,6 +58,7 @@
             <label>Garage</label><br>
 
             <input type="submit" name="buscar" value="Buscar">
+            <button name='botonFiltrar'>Filtrar Publicaciones</button>
         </fieldset>
     </form>
 </body>

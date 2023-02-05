@@ -10,4 +10,5 @@ añadir nuevo usuario -> nombre: miranda4 - contraseña: usuarios
  añadir nuevo usuario -> nombre: pepa - contraseña: ^3w0IAMBg%9o 
  añadir nuevo usuario -> nombre: admin - contraseña: NZ6n*v2cHM8A 
  añadir nuevo usuario -> nombre: admin - contraseña: Dt1XEZK*)IUT 
+ añadir nuevo usuario -> nombre: admin - contraseña: 1234 
  

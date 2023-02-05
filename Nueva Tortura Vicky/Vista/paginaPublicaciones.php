@@ -37,7 +37,7 @@
        
 
         <?php 
-        
+            require_once "../Modelo/publicacion.php";
             $publicacion = new Publicacion('inmobiliaria');
             $publicacion->mostraDatosPublicaciones();
 
