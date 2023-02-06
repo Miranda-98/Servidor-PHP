@@ -99,10 +99,10 @@
                 $sql = "UPDATE viviendas SET tipo='$tipo',zona='$zona',direccion='$direccion',ndormitorios='$dormitorios',
                 precio='$precio',tamano='$tamaño',extras='$extras',observaciones='$observaciones',fecha_anuncio='$fecha' WHERE id='$id'";
                 
-                if($cone->query($sql) === TRUE){
+                if($cone->query($sql) ){
                     echo "<script>alert('Publicacion modificada correctamente')</script>";
                     // header('location: ../Vista/paginaInicio.php');
-                    header('location: ../Vista/modificarPublicacion.php?direccion=pepe');
+                    header('location: ../Vista/paginaInicio.php');
                 
                     $b = true;
                 }
