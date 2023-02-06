@@ -1,5 +1,5 @@
 <?php
-require 'conexion.php';
+require_once 'publicacion.php';
 
 class Usuario extends Conexion
 {
@@ -70,6 +70,29 @@ class Usuario extends Conexion
         }
     }
 
+    function mostrarUsuarios()
+    {
+        try{
+            $cone = $this -> conexion;
+            $sql = "SELECT id_usuario FROM " . self::$TABLA;
+            $usuarios = $cone->query($sql);
+
+            foreach($usuarios as $fila){
+                $id = $fila['id_usuario'];
+                echo "<tr>
+                        <td>
+                            <a href='../Controlador/cont_usuarios.php?id_usuario=$id'>Borrar</a><br/>
+                        </td>
+                        <td>
+                            $id
+                        </td>
+                     </tr>";
+            }
+        } catch (PDOException $e) {
+            echo "<br/>ERROR AL MOSTRAR USUARIOS " . $e->getMessage();
+        }
+    }
+
     function controlUsuarios($id_login, $pass_login)
     {
         try {
@@ -98,9 +121,9 @@ class Usuario extends Conexion
     }
 }
 
-$user01 = new Usuario('inmobiliaria');
+// $user01 = new Usuario('inmobiliaria');
     // $user01->crearUsuario('miranda2');
     // $user01->crearUsuario('miranda3');
     // $user01->crearUsuario('miranda4');
-     $user01->crearUsuario('admin');
+    //  $user01->crearUsuario('admin');
     // $user01->eliminarUsuario('pepe');

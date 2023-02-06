@@ -25,7 +25,7 @@
     if(isset($_POST['botonTablas'])) {
         include '../Vista/paginaPublicaciones.php';
     } else if(isset($_POST['botonUsuarios'])) {
-        include '../Vista/administracionUsuarios.html';
+        include '../Vista/inicioUsuarios.php';
     } else if(isset($_POST['botonFiltrar'])) {
         echo "<h1>pepeweeeeeeeeeeeeeeeeeeeeee</h1>";
         //include '../Vista/busquedaPublicaciones.php';

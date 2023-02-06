@@ -1,5 +1,6 @@
 <?php
     require 'conexion.php';
+    
     class Publicacion extends Conexion
     {
         private $conexion, $id, $tipo, $zona, $direccion, $ndormitorios, $precio, $tamano, $extras, $observaciones, $fecha_anuncio;
