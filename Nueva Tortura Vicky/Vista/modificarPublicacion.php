@@ -59,12 +59,13 @@
         <label>Tamaño</label>
         <input type="text" name="tamaño" value=<?php echo $_GET['tamaño'] ?>><br/>
 
-        <label>Extras</label>
-        <select name="extras">
-            <option name="piscina" value="Piscina">Piscina</option>
-            <option name="jardin" value="Jardin">Jardin</option>
-            <option name="garage" value="Garage">Garage</option>
-        </select><br>
+        <label>Extras:</label>
+        <input type="checkbox" id="piscina" name="extras[]" value="Piscina">
+        <label name="extras"> Piscina</label>
+        <input type="checkbox" id="jardin" name="extras[]" value="Jardín">
+        <label name="extras"> Jardin</label>
+        <input type="checkbox" id="garage" name="extras[]" value="Garage">
+        <label name="extras"> Garage</label><br/>
 
         <label>Observaciones</label>
         <input type="text" name="observaciones" value=<?php echo $_GET['observaciones'] ?>><br/>
@@ -75,9 +76,23 @@
     <?php
         include '../Controlador/cont_publicaciones.php';
         // header('location: ../Controlador/cont_publicaciones.php?valor=modificar');
+        
+        
         $c = new Controlador_Publicacion();
         if(isset($_POST['id'])) {
-            $c->modificarPublicacion($_POST['id'],$_POST['tipo'],$_POST['zona'],$_POST['direccion'],$_POST['dormitorios'],$_POST['precio'],$_POST['tamaño'],$_POST['extras'],$_POST['observaciones'],$_POST['fecha']);
+            $aux = 0;
+            $extras = $_REQUEST['extras'];
+            if(isset($_REQUEST['extras'])){
+                for($i=0; $i<count($extras); $i++){
+                if($extras[$i] == 'Piscina')
+                    $aux += 1;
+                else if($extras[$i] == 'Jardín')
+                    $aux += 2;
+                else if($extras[$i] == 'Garage')
+                    $aux += 4;
+                }
+            }
+            $c->modificarPublicacion($_POST['id'],$_POST['tipo'],$_POST['zona'],$_POST['direccion'],$_POST['dormitorios'],$_POST['precio'],$_POST['tamaño'],$aux,$_POST['observaciones'],$_POST['fecha']);
 
         }   
     ?>

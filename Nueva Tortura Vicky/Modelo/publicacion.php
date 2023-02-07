@@ -1,5 +1,6 @@
 <?php
     require 'conexion.php';
+    
     class Publicacion extends Conexion
     {
         private $conexion, $id, $tipo, $zona, $direccion, $ndormitorios, $precio, $tamano, $extras, $observaciones, $fecha_anuncio;
@@ -99,10 +100,10 @@
                 $sql = "UPDATE viviendas SET tipo='$tipo',zona='$zona',direccion='$direccion',ndormitorios='$dormitorios',
                 precio='$precio',tamano='$tamaño',extras='$extras',observaciones='$observaciones',fecha_anuncio='$fecha' WHERE id='$id'";
                 
-                if($cone->query($sql) === TRUE){
+                if($cone->query($sql) ){
                     echo "<script>alert('Publicacion modificada correctamente')</script>";
                     // header('location: ../Vista/paginaInicio.php');
-                    header('location: ../Vista/modificarPublicacion.php?direccion=pepe');
+                    header('location: ../Vista/paginaInicio.php');
                 
                     $b = true;
                 }
@@ -129,7 +130,12 @@
                 if($_GET['pgnActual']==1){
                     header("Location:paginaInicio.php");
                 } else {
-                    $paginaActual = $_GET['pgnActual'];
+                    if(empty($_GET['pgnActual']) || !is_numeric($_GET['pgnActual'])){
+                        $paginaActual = 1;
+                    } else {
+                        $paginaActual = $_GET['pgnActual'];
+                    }
+                    
                 }
             } else {
                 $paginaActual = 1;
@@ -195,7 +201,7 @@
                             <td>" . $fila['extras'] . "</td>";
                             echo "<td>"; 
                             for($i=0;$i<count($aFotos);$i++){
-                                echo "<a href='../img/".$aFotos[$i]."'>" . $aFotos[$i] . "</a><br/>";
+                                echo "<a href='../img/".$aFotos[$i]."' target='_blank'>" . $aFotos[$i] . "</a><br/>";
                             }
                             echo "</td>";
                             echo "<td>" . $fila['observaciones'] . "</td>
@@ -296,12 +302,14 @@
                             if(isset($_REQUEST['piscina']) && isset($_REQUEST['jardin'])){
                                 $ex = $ex . "," . $_REQUEST['jardin'];
                             } else {
-                                $ex = $ex . "". $_REQUEST['jardin'];
+                                if(isset($_REQUEST['jardin']))
+                                    $ex = $ex . "". $_REQUEST['jardin'];
                             }
                             if(isset($_REQUEST['garage']) && (isset($_REQUEST['piscina']) || isset($_REQUEST['jardin']))){
                                 $ex = $ex . "," . $_REQUEST['garage'];
                             } else {
-                                $ex = $ex . "". $_REQUEST['garage'];
+                                if(isset($_REQUEST['garage']))
+                                    $ex = $ex . "". $_REQUEST['garage'];
                             }
                         
                             $sql = $sql . " AND extras = '$ex'";

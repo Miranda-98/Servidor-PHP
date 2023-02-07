@@ -13,10 +13,8 @@
         // echo "<br>-------------SUUUUUUU--------------<br>";
     
         session_start();
-        $expire = time() + (30 * 24 * 60 * 60); 
-        $date2 = date("Y-m-d H:i:s");
-        setCookie('datosUltimaConexion', $date2, $expire, '/');//expira en 30 días
-        $p = $_COOKIE['datosUltimaConexion'];
+        $_SESSION['user'] = $id;
+        
         header('location: ../Vista/paginaInicio.php');
     }else {
         // echo "<br>-------------NOOOOOOOOOO--------------<br>";

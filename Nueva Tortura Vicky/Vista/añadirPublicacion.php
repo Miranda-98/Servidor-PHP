@@ -48,11 +48,18 @@
         <input type="number" name="tamaño" required><br>
 
         <label>Extras:</label>
-        <select name="extras">
+        <input type="checkbox" id="piscina" name="extras[]" value="Piscina">
+        <label name="extras"> Piscina</label>
+        <input type="checkbox" id="jardin" name="extras[]" value="Jardín">
+        <label name="extras"> Jardin</label>
+        <input type="checkbox" id="garage" name="extras[]" value="Garage">
+        <label name="extras"> Garage</label><br/>
+
+        <!-- <select name="extras">
             <option name="piscina" value="Piscina">Piscina</option>
             <option name="jardin" value="Jardin">Jardin</option>
             <option name="garage" value="Garage">Garage</option>
-        </select><br>
+        </select><br> -->
 
         <label>Observaciones</label><br />
         <textarea rows="10" cols="30" name="observaciones"></textarea><br />
@@ -81,6 +88,18 @@ if (isset($_POST['submit'])) {
     $precio = $_REQUEST['precio'];
     $tamano = $_REQUEST['tamaño'];
     $extras = $_REQUEST['extras'];
+    
+        $aux = 0;
+        for($i=0; $i<count($extras); $i++){
+            if($extras[$i] == 'Piscina')
+                $aux += 1;
+            else if($extras[$i] == 'Jardín')
+                $aux += 2;
+            else if($extras[$i] == 'Garage')
+                $aux += 4;
+        }
+
+
     $observaciones = $_REQUEST['observaciones'];
     $fecha_anuncio = $_REQUEST['fechaCreacionAnuncio'];
 
@@ -95,7 +114,7 @@ if (isset($_POST['submit'])) {
 
     include '../Controlador/cont_publicaciones.php';
     $p = new Controlador_Publicacion();
-    $p->añadirPublicacion($tipo,$zona,$direccion,$habitaciones,$precio,$tamano,$extras,$observaciones,$fecha_anuncio,$foto);
+    $p->añadirPublicacion($tipo,$zona,$direccion,$habitaciones,$precio,$tamano,$aux,$observaciones,$fecha_anuncio,$foto);
 
         // Recuperamos los archivos seleccionados
         $files = $_FILES['fotosPublicacion'];
