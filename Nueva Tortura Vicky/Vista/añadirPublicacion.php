@@ -10,7 +10,12 @@
 
 <body>
     <h1>Añadir publicacion</h1>
-    <button><a href="../Vista/paginaInicio.php">Pagina Inicio</a></button>
+    <button style="background-color: transparent; border:none;"><a href="../Vista/paginaInicio.php"><img src="../img/logo.jpg" style="width: 80px; height: 80px;"></a></button>
+    <!-- <button><a href="../Vista/paginaInicio.php" >Pagina Inicio</a></button> -->
+    <!-- <form method="post">
+         <input type="image" src="../img/logo.jpg" href="../Vista/paginaInicio.php" style="width: 80px; height: 80px;">
+    </form> -->
+   
 
     <form method="POST" action="" enctype="multipart/form-data">
         <label>Tipo</label>
@@ -87,7 +92,8 @@ if (isset($_POST['submit'])) {
     $habitaciones = $_REQUEST['habitaciones'];
     $precio = $_REQUEST['precio'];
     $tamano = $_REQUEST['tamaño'];
-    $extras = $_REQUEST['extras'];
+    if(isset($_POST['extras'])){
+        $extras = $_REQUEST['extras'];
     
         $aux = 0;
         for($i=0; $i<count($extras); $i++){
@@ -98,6 +104,10 @@ if (isset($_POST['submit'])) {
             else if($extras[$i] == 'Garage')
                 $aux += 4;
         }
+    } else {
+        $aux = 0;
+    }
+    
 
 
     $observaciones = $_REQUEST['observaciones'];
@@ -145,8 +155,8 @@ if (isset($_POST['submit'])) {
                     echo "archivo subido correctamente";
                 }
             } catch (Exception $e) {
-                echo "Error: " . $e->getMessage();
-                echo "archivo no subido a la base de datos";
+                //echo "Error: " . $e->getMessage();
+                //echo "archivo no subido a la base de datos";
             }
         }
     

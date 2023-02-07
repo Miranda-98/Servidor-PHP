@@ -2,9 +2,9 @@
     /* --fondo: black; */
     --fondo: white;
     /* --fondo_caja: #242026; */
-    --fondo_caja: rgb(1, 43, 1);
+    --fondo_caja: rgb(24, 5, 130);
     /* --borde_caja: #8f7cec; */
-    --borde_caja: red;
+    --borde_caja: rgb(110, 108, 108);
     /* --neon: ; */
     --titulo: #fff; 
     --letraBotonSubmit: #cbbddb;
@@ -12,10 +12,13 @@
 
 * {
     box-sizing: border-box;
+    
 }
 
 body {
     background: var(--fondo);
+    background-image: url('../img/logo.jpg');
+        background-repeat: no-repeat;
 }
 
 .login-box {

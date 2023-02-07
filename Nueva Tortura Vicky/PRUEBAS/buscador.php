@@ -174,7 +174,7 @@ require '../Modelo/conexion.php';
     $result = $conecta ->query($sql);
     
 
-    echo "<table border=solid black 1px>
+    echo "
         <th colspan=11>TABLA CLIENTE</th>
                     <tr>
                         <td>ID</td>

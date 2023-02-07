@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>Buscador de publicaciones</h1>
-    <button><a href="paginaInicio.php">Volver a la pagina de inicio</a></button>
+    <button style="background-color: transparent; border:none;"><a href="../Vista/paginaInicio.php"><img src="../img/logo.jpg" style="width: 80px; height: 80px;"></a></button>
+    <!-- <button><a href="paginaInicio.php">Volver a la pagina de inicio</a></button> -->
     <form method="GET" >
         <fieldset>
             <legend>Introduzca los datos de las viviendas a buscar</legend>

@@ -10,9 +10,11 @@
     table, td {
         border: solid black 1px;
     }
-    img {
-        width: 100px;
-        height: 100px;
+
+    table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
 <body>
@@ -34,14 +36,61 @@
         </tr>
 
         <!-- <a href="busquedaPublicaciones.php">Filtrar resultados</a> -->
-       
-
-        <?php 
+       <tr>
+       <?php 
             require_once "../Modelo/publicacion.php";
             $publicacion = new Publicacion('inmobiliaria');
-            $publicacion->mostraDatosPublicaciones();
+            // $publicacion->mostraDatosPublicaciones();
 
+            
+
+            $p = $publicacion->mostraDatosPublicaciones();
+            
+            foreach($p as $fila){
+                $idSeleccionado = $fila['total_id'];
+                $tipoSeleccionado = $fila['tipo'];
+                $zonaSleccionado = $fila['zona'];
+                $direccionSeleccionada = $fila['direccion'];
+                $nDormitoriosSeleccionados = $fila['ndormitorios'];
+                $precioSeleccionado = $fila['precio'];
+                $tamañoSeleccionado = $fila['tamano'];
+                $extrasSeleccionados = $fila['extras'];
+                $observacionesSeleccionadas = $fila['observaciones'];
+                $fechaSeleccionada = $fila['fecha_anuncio'];
+
+             
+                $aFotos = explode(',',$fila['fotos']);
+                
+                echo "<tr> 
+                        <td>
+                            <a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar'>Borrar</a><br/>
+                            <a href='../Vista/modificarPublicacion.php?id=$idSeleccionado&tipo=$tipoSeleccionado&zona=$zonaSleccionado
+                            &direccion=$direccionSeleccionada&dormitorios=$nDormitoriosSeleccionados&precio=$precioSeleccionado
+                            &tamaño=$tamañoSeleccionado&extras=$extrasSeleccionados&observaciones=$observacionesSeleccionadas
+                            &fecha=$fechaSeleccionada'>Modificar</a>
+                        </td>
+                        <td>" . $fila['total_id'] . "</td>
+                        <td>" . $fila['tipo'] . "</td>
+                        <td>" . $fila['zona'] . "</td>
+                        <td>" . $fila['direccion'] . "</td>
+                        <td>" . $fila['ndormitorios'] . "</td>
+                        <td>" . $fila['precio'] . "</td>
+                        <td>" . $fila['tamano'] . "</td>
+                        <td>" . $fila['extras'] . "</td>";
+                        echo "<td>"; 
+                        for($i=0;$i<count($aFotos);$i++){
+                            echo "<a href='../img/".$aFotos[$i]."' target='_blank'>" . $aFotos[$i] . "</a><br/>";
+                        }
+                        echo "</td>";
+                        echo "<td>" . $fila['observaciones'] . "</td>
+                        <td>" . $fila['fecha_anuncio'] . "</td>
+                    </tr>";    
+                    
+            }
         ?>
+       </tr>
+
+        
             <!-- mostrarTabla()->controlador -->
     </table>
 </body>

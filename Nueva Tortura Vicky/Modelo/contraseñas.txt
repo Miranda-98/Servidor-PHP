@@ -39,3 +39,13 @@ añadir nuevo usuario -> nombre: miranda4 - contraseña: usuarios
  añadir nuevo usuario -> nombre: miranda9 - contraseña: mW$OyfIkq=W+ 
  añadir nuevo usuario -> nombre: miranda10 - contraseña: 02OC%BiAc=M0 
  
+ añadir nuevo usuario -> nombre: miranda2 - contraseña: s0I^tr45Ui=V 
+ añadir nuevo usuario -> nombre: miranda3 - contraseña: lA+AM)8Zx%#U 
+ añadir nuevo usuario -> nombre: miranda4 - contraseña: n3!X$UJ$rGi( 
+ añadir nuevo usuario -> nombre: miranda5 - contraseña: 74AA^wxS2heq 
+ añadir nuevo usuario -> nombre: miranda6 - contraseña: YmBlJaiN7wf- 
+ añadir nuevo usuario -> nombre: miranda7 - contraseña: mHd13g-O%IYs 
+ añadir nuevo usuario -> nombre: miranda8 - contraseña: -()3$y2i8weg 
+ añadir nuevo usuario -> nombre: miranda9 - contraseña: Om#UOi)=Xv7! 
+ añadir nuevo usuario -> nombre: miranda10 - contraseña: *jnxwyE0qS64 
+ 

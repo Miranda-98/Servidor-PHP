@@ -7,13 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>EL gran master pepe</h1>
-    <button><a href="../Vista/paginaInicio.php">Pagina inicio</a></button>
+        <!-- <h1>EL gran master pepe</h1> -->
+        <!-- <input type="image" src="../img/logo.jpg" href="../Vista/paginaInicio.php" style="width: 80px; height: 80px;">
+    <button style="background-color: transparent;"><a href="../Vista/paginaInicio.php"> aa <img href="../img/cerdo.jpg" style="width: 80px; height: 80px;"></a></button> -->
     
-    <form method="post">
-        <div><button name='botonUsuarios'>Mostrar usuarios</button></div>
-        <div><button name='botonAdminUsuarios'>Administrar usuarios</button></div>
-    </form>
+    
 
     <?php
         include '../Vista/paginaUsuarios.php';
