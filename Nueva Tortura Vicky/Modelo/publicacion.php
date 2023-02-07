@@ -130,7 +130,12 @@
                 if($_GET['pgnActual']==1){
                     header("Location:paginaInicio.php");
                 } else {
-                    $paginaActual = $_GET['pgnActual'];
+                    if(empty($_GET['pgnActual']) || !is_numeric($_GET['pgnActual'])){
+                        $paginaActual = 1;
+                    } else {
+                        $paginaActual = $_GET['pgnActual'];
+                    }
+                    
                 }
             } else {
                 $paginaActual = 1;
@@ -180,7 +185,7 @@
                     
                     echo "<tr>
                             <td>
-                                <a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar'>Borrar</a><br/>
+                                <a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar>Borrar</a><br/>
                                 <a href='../Vista/modificarPublicacion.php?id=$idSeleccionado&tipo=$tipoSeleccionado&zona=$zonaSleccionado
                                 &direccion=$direccionSeleccionada&dormitorios=$nDormitoriosSeleccionados&precio=$precioSeleccionado
                                 &tamaño=$tamañoSeleccionado&extras=$extrasSeleccionados&observaciones=$observacionesSeleccionadas
@@ -196,7 +201,7 @@
                             <td>" . $fila['extras'] . "</td>";
                             echo "<td>"; 
                             for($i=0;$i<count($aFotos);$i++){
-                                echo "<a href='../img/".$aFotos[$i]."'>" . $aFotos[$i] . "</a><br/>";
+                                echo "<a href='../img/".$aFotos[$i]."' target='_blank'>" . $aFotos[$i] . "</a><br/>";
                             }
                             echo "</td>";
                             echo "<td>" . $fila['observaciones'] . "</td>
@@ -297,12 +302,14 @@
                             if(isset($_REQUEST['piscina']) && isset($_REQUEST['jardin'])){
                                 $ex = $ex . "," . $_REQUEST['jardin'];
                             } else {
-                                $ex = $ex . "". $_REQUEST['jardin'];
+                                if(isset($_REQUEST['jardin']))
+                                    $ex = $ex . "". $_REQUEST['jardin'];
                             }
                             if(isset($_REQUEST['garage']) && (isset($_REQUEST['piscina']) || isset($_REQUEST['jardin']))){
                                 $ex = $ex . "," . $_REQUEST['garage'];
                             } else {
-                                $ex = $ex . "". $_REQUEST['garage'];
+                                if(isset($_REQUEST['garage']))
+                                    $ex = $ex . "". $_REQUEST['garage'];
                             }
                         
                             $sql = $sql . " AND extras = '$ex'";

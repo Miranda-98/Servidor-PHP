@@ -1,7 +1,7 @@
 <?php
 require_once 'publicacion.php';
 
-class Usuario extends Conexion
+class Usuario extends Publicacion
 {
     private $conexion;
     public static $TABLA = 'usuarios';
@@ -33,7 +33,7 @@ class Usuario extends Conexion
             if (!$archivo) {
                 echo "error al abrir el fichero";
             } else {
-                $escribe = "añadir nuevo usuario -> nombre: " . $nombre . " - contraseña: " . '1234' . " \n ";
+                $escribe = "añadir nuevo usuario -> nombre: " . $nombre . " - contraseña: " . $contraseñaAleatoria . " \n ";
                 echo self::randomPass();
                 fwrite($archivo, $escribe);
                 rewind($archivo);
@@ -43,7 +43,7 @@ class Usuario extends Conexion
 
             //$contraseñaAleatoria = self::randomPass();
             echo $contraseñaAleatoria;
-            $contraseñaAleatoria = password_hash('1234', PASSWORD_DEFAULT);
+            $contraseñaAleatoria = password_hash($contraseñaAleatoria, PASSWORD_DEFAULT);
             $cone = $this->conexion;
             $sql = "INSERT INTO " . self::$TABLA . "(id_usuario, password) VALUES (:A, :B)";
             $stmt = $cone->prepare($sql);
@@ -81,7 +81,7 @@ class Usuario extends Conexion
                 $id = $fila['id_usuario'];
                 echo "<tr>
                         <td>
-                            <a href='../Controlador/cont_usuarios.php?id_usuario=$id'>Borrar</a><br/>
+                            <a href='../Controlador/cont_usuarios.php?id_usuario=$id&valor=borrar'>Borrar</a><br/>
                         </td>
                         <td>
                             $id
@@ -122,8 +122,14 @@ class Usuario extends Conexion
 }
 
 // $user01 = new Usuario('inmobiliaria');
-    // $user01->crearUsuario('miranda2');
-    // $user01->crearUsuario('miranda3');
-    // $user01->crearUsuario('miranda4');
-    //  $user01->crearUsuario('admin');
+//     $user01->crearUsuario('miranda2');
+//     $user01->crearUsuario('miranda3');
+//     $user01->crearUsuario('miranda4');
+//     $user01->crearUsuario('miranda5');
+//     $user01->crearUsuario('miranda6');
+//     $user01->crearUsuario('miranda7');
+//     $user01->crearUsuario('miranda8');
+//     $user01->crearUsuario('miranda9');
+//     $user01->crearUsuario('miranda10');
+//      $user01->crearUsuario('admin');
     // $user01->eliminarUsuario('pepe');

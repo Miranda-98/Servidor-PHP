@@ -11,8 +11,8 @@
     $control = new Usuario('inmobiliaria');
 
     if(isset($_GET['valor']) == 'borrar') {
-        $control->eliminarUsuario($_GET['id']);
-        include('../Vista/inicioUsuarios.php');
+        $control->eliminarUsuario($_GET['id_usuario']);
+        header('location: ../Vista/paginaInicio.php?user=user');
     }
 
     // if(isset($_POST['botonUsuarios'])) {

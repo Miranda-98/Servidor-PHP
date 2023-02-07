@@ -33,6 +33,8 @@
     } else if(isset($_POST['añadirPublicacion'])) {
         // include 'añadirPublicacion.php';
         header('location: ../Vista/añadirPublicacion.php');
+    } else if(isset($_GET['user'])) {
+        include '../Vista/inicioUsuarios.php';
     }
     else {
         include '../Vista/paginaPublicaciones.php';

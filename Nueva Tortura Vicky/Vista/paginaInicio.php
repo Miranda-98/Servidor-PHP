@@ -16,6 +16,7 @@
 // $expire = time() + (30 * 24 * 60 * 60); 
 // $date2 = date("Y-m-d H:i:s");
 // setCookie('datosUltimaConexion', $date2, $expire);//expira en 30 días
+session_start();
 ?>
 
 <body>
@@ -27,7 +28,7 @@
             <td>Añadir Publicacion</td>
             <td>Mostdar Publicaciones</td>
             <td>Cerrar Sesion</td>
-            <td>Bienvenido @adminitdador</td>
+            <td>Bienvenido <?php echo $_SESSION['user']?></td>
             <td><a href="../Modelo/logOut.php">Cerrar Sesion</a></td>
         </tr>
         <tr>
@@ -38,9 +39,9 @@
             <td></td>
             <td></td>
             <!-- <td>
-                <?php echo $_COOKIE['datosUltimaConexion']; ?>
+                <?php echo $_COOKIE[$_SESSION['user']]; ?>
             </td> -->
-            <td><?php echo $_COOKIE['datosUltimaConexion']; ?></td>
+            <td><?php echo $_COOKIE[$_SESSION['user']]; ?></td>
         </tr>
      </table>
 
@@ -51,7 +52,11 @@
         <div>
             <form method="post">
                 <div><button name='botonTablas'>Publicaciones</button></div>
-                <div><button name='botonUsuarios'>Usuario</button></div>
+                <?php 
+                    if( $_SESSION['user'] == 'admin')
+                        echo "<div><button name='botonUsuarios'>Usuario</button></div>";
+                ?>
+                
                 <div><button name='botonFiltrar'>Filtrar Publicaciones</button></div>
                 <div><button name='añadirPublicacion'>Añadir Publicaciones</button></div>
 

@@ -11,4 +11,31 @@ añadir nuevo usuario -> nombre: miranda4 - contraseña: usuarios
  añadir nuevo usuario -> nombre: admin - contraseña: NZ6n*v2cHM8A 
  añadir nuevo usuario -> nombre: admin - contraseña: Dt1XEZK*)IUT 
  añadir nuevo usuario -> nombre: admin - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda2 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda3 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda4 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: admin - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda5 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda6 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda7 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: admin - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda5 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda6 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda7 - contraseña: 1234 
+ añadir nuevo usuario -> nombre: admin - contraseña: 1234 
+ añadir nuevo usuario -> nombre: miranda - contraseña: 0&-^rIdM9=sV 
+ añadir nuevo usuario -> nombre: miranda2 - contraseña: _$up&d2!)G#R 
+ añadir nuevo usuario -> nombre: miranda3 - contraseña: 8NMd_2rwGEU5 
+ añadir nuevo usuario -> nombre: miranda4 - contraseña: @2c@k(72DfK) 
+ añadir nuevo usuario -> nombre: miranda5 - contraseña: vH28M$l2D(uP 
+ añadir nuevo usuario -> nombre: miranda8 - contraseña: +GZ^qB^)f%RN 
+ añadir nuevo usuario -> nombre: miranda2 - contraseña: PK!e$q)kXRXQ 
+ añadir nuevo usuario -> nombre: miranda3 - contraseña: YkZmxF+CA$zd 
+ añadir nuevo usuario -> nombre: miranda4 - contraseña: rScs%kat3RZL 
+ añadir nuevo usuario -> nombre: miranda5 - contraseña: AKgVBa$bLPTo 
+ añadir nuevo usuario -> nombre: miranda6 - contraseña: p_#4(PZ=t71M 
+ añadir nuevo usuario -> nombre: miranda7 - contraseña: mwL_%i!LnXq& 
+ añadir nuevo usuario -> nombre: miranda8 - contraseña: 7Bu8s$ciZwj9 
+ añadir nuevo usuario -> nombre: miranda9 - contraseña: mW$OyfIkq=W+ 
+ añadir nuevo usuario -> nombre: miranda10 - contraseña: 02OC%BiAc=M0 
  
