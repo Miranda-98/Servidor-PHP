@@ -13,13 +13,13 @@
     }
 </style>
 <?php
-    // $expire = time() + (30 * 24 * 60 * 60); 
-    // $date2 = date("Y-m-d H:i:s");
-    // setCookie('datosUltimaConexion', $date2, $expire);//expira en 30 días
+// $expire = time() + (30 * 24 * 60 * 60); 
+// $date2 = date("Y-m-d H:i:s");
+// setCookie('datosUltimaConexion', $date2, $expire);//expira en 30 días
 ?>
 
 <body>
-    <table style="border: solid black 1px">
+    <table >
 
         <tr>
             <td>Añadir Usuario</td>
@@ -29,7 +29,7 @@
             <td>Cerrar Sesion</td>
             <td>Bienvenido @adminitdador</td>
             <td><a href="../Modelo/logOut.php">Cerrar Sesion</a></td>
-           
+        </tr>
         <tr>
             <td></td>
             <td></td>
@@ -40,13 +40,29 @@
             <!-- <td>
                 <?php echo $_COOKIE['datosUltimaConexion']; ?>
             </td> -->
-            <td><?php echo $_GET['cookie'];?></td>
+            <td><?php echo $_COOKIE['datosUltimaConexion']; ?></td>
         </tr>
-    </table>
-    <div>
-        <div><a href="../Vista/paginaPublicaciones.php">Publicaciones</a></div>
-        <div><a href="">Usuarios</a></div>
-    </div>
-</body>
+     </table>
+
+     <table>
+
+
+
+        <div>
+            <form method="post">
+                <div><button name='botonTablas'>Publicaciones</button></div>
+                <div><button name='botonUsuarios'>Usuario</button></div>
+                <div><button name='botonFiltrar'>Filtrar Publicaciones</button></div>
+                <div><button name='añadirPublicacion'>Añadir Publicaciones</button></div>
+
+            </form>
+
+        </div>
+
+        <?php
+            include '../Controlador/controlador_vista.php';
+        ?>
+        </table>
+        </body>
 
 </html>
