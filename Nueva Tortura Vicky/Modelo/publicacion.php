@@ -185,7 +185,7 @@
                     
                     echo "<tr>
                             <td>
-                                <a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar>Borrar</a><br/>
+                                <a href='../Controlador/cont_publicaciones.php?id=$idSeleccionado&valor=borrar'>Borrar</a><br/>
                                 <a href='../Vista/modificarPublicacion.php?id=$idSeleccionado&tipo=$tipoSeleccionado&zona=$zonaSleccionado
                                 &direccion=$direccionSeleccionada&dormitorios=$nDormitoriosSeleccionados&precio=$precioSeleccionado
                                 &tamaño=$tamañoSeleccionado&extras=$extrasSeleccionados&observaciones=$observacionesSeleccionadas
