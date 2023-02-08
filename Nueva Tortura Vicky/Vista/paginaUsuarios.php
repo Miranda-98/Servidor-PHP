@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <style>
-    table, td{
+    .mostrar td{
         border: solid black 1px;
     }
 </style>
 <body>
     <br/>
 
-    <table>
+    <table class="mostrar">
     
         <th colspan="2">Usuario</th>
     

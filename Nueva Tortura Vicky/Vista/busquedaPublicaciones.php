@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador</title>
 </head>
+<?php
+// $expire = time() + (30 * 24 * 60 * 60); 
+// $date2 = date("Y-m-d H:i:s");
+// setCookie('datosUltimaConexion', $date2, $expire);//expira en 30 días
+session_start();
+if(!isset($_SESSION['user'])){
+    header('location: ../Vista/loginUsuarios.html');
+}
+?>
 <body>
     <h1>Buscador de publicaciones</h1>
-    <button style="background-color: transparent; border:none;"><a href="../Vista/paginaInicio.php"><img src="../img/logo.jpg" style="width: 80px; height: 80px;"></a></button>
+    <button style="background-color: transparent; border:none;"><a href="../Vista/paginaInicio.php"><img src="../img/logo2.jpg" style="width: 100px; height: 100px;"></a></button>
     <!-- <button><a href="paginaInicio.php">Volver a la pagina de inicio</a></button> -->
     <form method="GET" >
         <fieldset>

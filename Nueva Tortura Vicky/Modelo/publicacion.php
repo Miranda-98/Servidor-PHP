@@ -219,13 +219,14 @@
                 sobrantes para no perderlos)
                 el if es pura mariconada para estetica
             */
-            
+            echo "<div id='barraPagina'>";
             for ($i=1; $i <= ceil($num['cantidad']/$limite); $i++) {
                 if($i<ceil($num['cantidad']/$limite))
                     echo "<a href='?pgnActual=".$i."'>".$i."</a> - ";
                 else
                     echo "<a href='?pgnActual=".$i."'>".$i."</a> ";;
             }
+            echo "</div>";
             return $publicaciones;
 
         }

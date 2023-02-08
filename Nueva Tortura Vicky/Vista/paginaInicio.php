@@ -13,6 +13,8 @@
         align-items: center;
         justify-content: center;
     }
+    
+    
 </style>
 <?php
 // $expire = time() + (30 * 24 * 60 * 60); 
@@ -20,15 +22,17 @@
 // setCookie('datosUltimaConexion', $date2, $expire);//expira en 30 días
 session_start();
 if(!isset($_SESSION['user'])){
+    
     header('location: ../Vista/loginUsuarios.html');
 }
 ?>
 
 <body>
+    
     <table>
         <form method="post">
             <tr>
-                <td><input type="image" src="../img/logo.jpg" href="../Vista/paginaInicio.php" style="width: 80px; height: 80px;"></td>
+                <td><input type="image" src="../img/logo2.jpg" href="../Vista/paginaInicio.php" style="width: 100px; height: 100px;"></td>
                 <td>Bienvenido <?php echo $_SESSION['user'] ?></td>
                 <?php echo "";
                     if ($_SESSION['user'] == 'admin')
@@ -53,13 +57,14 @@ if(!isset($_SESSION['user'])){
                         echo 'Ultima conexion: primera conexion'; 
                     ?></td>
             </tr>
-<?php
-                include '../Controlador/controlador_vista.php';
-            ?>
+            
+            
         </form>
         
     </table>
-
+<?php
+                include '../Controlador/controlador_vista.php';
+            ?>
     
 
 </body>

@@ -115,7 +115,18 @@
             $nRegistros = $cone->query($sqlCantidad);
             $num = $nRegistros->fetch();
 
-            echo "<style>table,tr,td{border:solid black 1px}img{width: 40px; height: 40px}td{width:100px;}</style>
+            echo "<style>
+                    table,tr,td{
+                       
+                    }
+                    img{
+                        width: 40px; height: 40px
+                    }
+                    tr{
+                        width: 50px;
+                        height: 50px;
+                    }
+                </style>
                 <table>
                     <tr>
                         <td></td>

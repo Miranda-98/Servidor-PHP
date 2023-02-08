@@ -108,7 +108,7 @@
                 $result = $conecta->query($sql);
             
             
-                echo "<style>table,tr,td{border:solid black 1px}img{width: 40px; height: 40px}td{width:100px;}</style>
+                echo "<style>table,tr,td{}img{width: 40px; height: 40px}td{width:100px;}</style>
                 <table>
                     <tr>
                         <td></td>

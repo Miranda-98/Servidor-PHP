@@ -7,7 +7,7 @@
     <title>Publicaciones</title>
 </head>
 <style>
-    table, td {
+    .mostrar td {
         border: solid black 1px;
     }
 
@@ -16,10 +16,15 @@
         align-items: center;
         justify-content: center;
     }
+    #barraPagina{
+        margin: auto;
+        width: 50%;
+        
+    }
 </style>
 <body>
-    <table>
-        <th colspan=12>Tabla Viviendas</th>
+    <table class="mostrar">
+        <th colspan=12 class="mostrar">Tabla Viviendas</th>
         <tr>
             <td> </td>
             <td>ID</td>
