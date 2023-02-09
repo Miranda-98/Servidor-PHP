@@ -133,7 +133,7 @@
                 } else {
                     if(empty($_GET['pgnActual']) || !is_numeric($_GET['pgnActual'])){
                         $paginaActual = 1;
-                    } else if($_GET['x'] < $_GET['pgnActual']) {
+                    } else if($_GET['x'] < $_GET['pgnActual'] || $_GET['pgnActual'] <= 0) {
                         $paginaActual = 1;
                     } 
                     // else if($_GET['pgnActual'] % 10 == 0) {
