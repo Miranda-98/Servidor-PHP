@@ -127,12 +127,19 @@
                 Si pgnActual si existe mostramos la pagina de registros correspondiente
             */
             if(isset($_GET['pgnActual'])){
+
                 if($_GET['pgnActual']==1){
                     header("Location:paginaInicio.php");
                 } else {
                     if(empty($_GET['pgnActual']) || !is_numeric($_GET['pgnActual'])){
                         $paginaActual = 1;
-                    } else {
+                    } else if($_GET['x'] < $_GET['pgnActual']) {
+                        $paginaActual = 1;
+                    } 
+                    // else if($_GET['pgnActual'] % 10 == 0) {
+                    //     $paginaActual = 1;
+                    // }
+                     else {
                         $paginaActual = $_GET['pgnActual'];
                     }
 
@@ -220,11 +227,12 @@
                 el if es pura mariconada para estetica
             */
             
-            for ($i=1; $i <= ceil($num['cantidad']/$limite); $i++) {
+            $total = ceil($num['cantidad']/$limite);
+            for ($i=1; $i <= $total; $i++) {
                 if($i<ceil($num['cantidad']/$limite))
-                    echo "<a href='?pgnActual=".$i."'>".$i."</a> - ";
+                    echo "<a href='?pgnActual=".$i."&x=".$total."'>".$i."</a> - ";
                 else
-                    echo "<a href='?pgnActual=".$i."'>".$i."</a> ";;
+                    echo "<a href='?pgnActual=".$i."&x=".$total."'>".$i."</a> ";;
             }
             return $publicaciones;
 

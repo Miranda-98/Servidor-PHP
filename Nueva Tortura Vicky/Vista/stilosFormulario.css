@@ -2,11 +2,12 @@
     /* --fondo: black; */
     --fondo: white;
     /* --fondo_caja: #242026; */
-    --fondo_caja: rgb(24, 5, 130);
+    --fondo_caja: rgb(253, 253, 253);
     /* --borde_caja: #8f7cec; */
-    --borde_caja: rgb(110, 108, 108);
+    /* --borde_caja: rgb(28, 5, 118); */
+    --borde_caja: transparent;
     /* --neon: ; */
-    --titulo: #fff; 
+    --titulo: blue; 
     --letraBotonSubmit: #cbbddb;
 }
 
@@ -110,4 +111,8 @@ body {
     margin: auto;
     color: var(--borde_caja);
     text-decoration: none;
+}
+
+::placeholder{
+    color: blue;
 }
