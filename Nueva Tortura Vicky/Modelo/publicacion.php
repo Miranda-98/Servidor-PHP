@@ -229,11 +229,12 @@
             
             $total = ceil($num['cantidad']/$limite);
             for ($i=1; $i <= $total; $i++) {
-                if($i<ceil($num['cantidad']/$limite))
+                if($i<$total)
                     echo "<a href='?pgnActual=".$i."&x=".$total."'>".$i."</a> - ";
                 else
                     echo "<a href='?pgnActual=".$i."&x=".$total."'>".$i."</a> ";;
             }
+            echo "</div>";
             return $publicaciones;
 
         }

@@ -2,9 +2,15 @@
     /* --fondo: black; */
     --fondo: white;
     /* --fondo_caja: #242026; */
+<<<<<<< HEAD
     --fondo_caja: rgb(253, 253, 253);
     /* --borde_caja: #8f7cec; */
     /* --borde_caja: rgb(28, 5, 118); */
+=======
+    --fondo_caja: transparent;
+    /* --borde_caja: #8f7cec; */
+    /* --borde_caja: rgb(110, 108, 108); */
+>>>>>>> 779d6fb592fba4c9b138a7266315196f15b14f0a
     --borde_caja: transparent;
     /* --neon: ; */
     --titulo: blue; 
@@ -18,8 +24,17 @@
 
 body {
     background: var(--fondo);
-    background-image: url('../img/logo.jpg');
-        background-repeat: no-repeat;
+}
+
+.fondo {
+    position: absolute;
+    height: 3000px;
+    left: 400px;
+    top: 100px;
+}
+
+img {
+    border: 10px;
 }
 
 .login-box {
@@ -115,4 +130,9 @@ body {
 
 ::placeholder{
     color: blue;
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 779d6fb592fba4c9b138a7266315196f15b14f0a
