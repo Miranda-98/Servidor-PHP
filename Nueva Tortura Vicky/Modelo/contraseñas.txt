@@ -48,4 +48,13 @@ añadir nuevo usuario -> nombre: miranda4 - contraseña: usuarios
  añadir nuevo usuario -> nombre: miranda8 - contraseña: -()3$y2i8weg 
  añadir nuevo usuario -> nombre: miranda9 - contraseña: Om#UOi)=Xv7! 
  añadir nuevo usuario -> nombre: miranda10 - contraseña: *jnxwyE0qS64 
+ añadir nuevo usuario -> nombre: daniel - contraseña: 7YsDYNXN#oin 
+ añadir nuevo usuario -> nombre: portu - contraseña: Z0!ZMgC0R8V@ 
+ añadir nuevo usuario -> nombre: portu - contraseña: NY1RXOX3ly!y 
+ añadir nuevo usuario -> nombre: maria - contraseña: *-0TqOY_1nl! 
+ añadir nuevo usuario -> nombre: maria - contraseña: gmnUeFT3!Z0V 
+ añadir nuevo usuario -> nombre: maria - contraseña: sk7XF!n!)+T9 
+ añadir nuevo usuario -> nombre: maria - contraseña: h=R8lxODR=*S 
+ añadir nuevo usuario -> nombre: rubio - contraseña: hc6Urm33PX+a 
+ añadir nuevo usuario -> nombre: marcelo - contraseña: MpWn3t3GQWax 
  

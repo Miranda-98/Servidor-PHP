@@ -24,7 +24,6 @@ if(!isset($_SESSION['user'])){
 ?>
 
 <body>
-    <?php  echo $_SESSION['user'];?>
     <div class="centrar">
         <h1>Añadir publicacion</h1>
         <button style="background-color: transparent; border:none;"><a href="../Vista/paginaInicio.php"><img src="../img/logo2.jpg" style="width: 100px; height: 100px;"></a></button>

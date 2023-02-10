@@ -28,13 +28,13 @@ class Usuario extends Publicacion
     {
         try {
             // almacenar usuario - contraseña antes del cifrado
-            $archivo = fopen("contraseñas.txt", "a+b");
+            $archivo = fopen("../Modelo/contraseñas.txt", "a+b");
             $contraseñaAleatoria = self::randomPass();
             if (!$archivo) {
                 echo "error al abrir el fichero";
             } else {
                 $escribe = "añadir nuevo usuario -> nombre: " . $nombre . " - contraseña: " . $contraseñaAleatoria . " \n ";
-                echo self::randomPass();
+                // echo self::randomPass();
                 fwrite($archivo, $escribe);
                 rewind($archivo);
             }
@@ -42,7 +42,7 @@ class Usuario extends Publicacion
             fclose($archivo);
 
             //$contraseñaAleatoria = self::randomPass();
-            echo $contraseñaAleatoria;
+            //echo $contraseñaAleatoria;
             $contraseñaAleatoria = password_hash($contraseñaAleatoria, PASSWORD_DEFAULT);
             $cone = $this->conexion;
             $sql = "INSERT INTO " . self::$TABLA . "(id_usuario, password) VALUES (:A, :B)";
@@ -52,7 +52,7 @@ class Usuario extends Publicacion
             $stmt->execute();
             echo '<br/>insertado';
         } catch (PDOException $e) {
-            echo "<br/>ERROR AL CREAR USUARIO " . $e->getMessage();
+            echo "<br/>EL USUARIO YA ESTA REGISTRADO EN LA BASE DE DATOS ";
         }
     }
 

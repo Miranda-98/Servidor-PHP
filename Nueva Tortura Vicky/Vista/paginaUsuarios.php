@@ -28,6 +28,22 @@
             include '../Controlador/cont_usuarios.php';
             $user0 = new Controlador_Usuarios();
             $user0->mostrar();
+
+        ?>
+        <div id="crearUsuario">
+            <form method="Get">
+                <label>Nombre del usuario</label>
+                <input type="text" name="nombre" id="nombre">
+
+                <input type="submit" name="enviarUsuario" value="Generar Contraseña">
+            </form>
+        </div>
+            
+        <?php
+            $user = new Controlador_Usuarios();
+
+            if(isset($_GET['nombre']))
+                $user->añadirUsuario($_GET['nombre']);
         ?>
     </table>
 

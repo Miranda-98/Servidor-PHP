@@ -20,11 +20,15 @@
 // $expire = time() + (30 * 24 * 60 * 60); 
 // $date2 = date("Y-m-d H:i:s");
 // setCookie('datosUltimaConexion', $date2, $expire);//expira en 30 días
-session_start();
-if(!isset($_SESSION['user'])){
+
+// session_start();
+//     if(!isset($_SESSION['user'])){
+//         header('location: ../Vista/loginUsuarios.html');
+if(session_status() == PHP_SESSION_NONE)
+    session_start();
+
+    if(isset($_SESSION['user'])){
     
-    header('location: ../Vista/loginUsuarios.html');
-}
 ?>
 
 <body>
@@ -50,12 +54,14 @@ if(!isset($_SESSION['user'])){
                 </td>
                 
                 <td><a href="../Modelo/logOut.php">Cerrar Sesion</a></td>
-                <td><?php
+                <td>
+                    <?php
                         if(isset($_COOKIE[$_SESSION['user']]))
                             echo 'Ultima conexion: ' . $_COOKIE[$_SESSION['user']]; 
                         else 
                         echo 'Ultima conexion: primera conexion'; 
-                    ?></td>
+                    ?>
+                </td>
             </tr>
             
             
@@ -70,3 +76,9 @@ if(!isset($_SESSION['user'])){
 </body>
 
 </html>
+<?php
+ } else {
+    echo "<script>alert('Debes de iniciar sesion');</script>";
+    header('location: ../Vista/loginUsuarios.html');
+ }
+?>  

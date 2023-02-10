@@ -7,6 +7,8 @@
     <title>Publicaciones</title>
 </head>
 <style>
+    
+
     .mostrar td {
         border: solid black 1px;
     }
@@ -15,11 +17,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    #barraPagina{
-        margin: auto;
-        width: 50%;
         
+    }
+    
+    #barraPagina{
+        position: relative;
+        left: 45%;        
     }
 </style>
 <body>

@@ -227,6 +227,7 @@
                 el if es pura mariconada para estetica
             */
             
+            echo "<div id='barraPagina'>";
             $total = ceil($num['cantidad']/$limite);
             for ($i=1; $i <= $total; $i++) {
                 if($i<$total)
