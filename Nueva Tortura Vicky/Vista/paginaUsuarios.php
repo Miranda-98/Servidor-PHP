@@ -11,6 +11,16 @@
         border: solid black 1px;
     }
 </style>
+<?php
+    if(session_status() == PHP_SESSION_NONE)
+    session_start();
+
+    echo $_SESSION['user'];
+    if(isset($_SESSION['user']) ){
+        $valor = $_SESSION['user'];
+        if($valor == 'admin'){
+    
+?>
 <body>
     <br/>
 
@@ -49,3 +59,9 @@
 
 </body>
 </html>
+<?php
+    } else {
+        header('location: ../Vista/paginaInicio.php');
+     }
+    }
+?>
