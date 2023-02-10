@@ -36,6 +36,8 @@
         $nRegistros = $conexion->query($sql2);
         $num = $nRegistros->fetch();
 
+        echo $num['cantidad'];
+
         // se almacena los registros
         $result = $conexion->query($sql);
         
