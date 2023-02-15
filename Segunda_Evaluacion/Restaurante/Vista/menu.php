@@ -29,9 +29,11 @@
             foreach($menu as $m) {
                 echo "<tr>
                             <td><input type='checkbox' name='añadir' value=".$m['id']." ></td>
-                            <td><a href='../Controlador/cont_platos.php?msg=añadir&id=".$m['id']."'>Añadir</a></td>
-                            <td><a href='../Controlador/cont_platos.php?msg=borrar&id=".$m['id']."'>Borrar</a></td>
-                            <td>".$m['id']."</td>
+                            <td><button name='añadir' value=".$m['id'].">Añadir</button></td>
+                            <td><button name='borrar' value=".$m['id'].">Borrar</button></td>";
+                            // <td><a href='../Controlador/cont_platos.php?msg=añadir&id=".$m['id']."'>Añadir</a></td>
+                            // <td><a href='../Controlador/cont_platos.php?msg=borrar&id=".$m['id']."'>Borrar</a></td>
+                            echo "<td>".$m['id']."</td>
                             <td>".$m['nombre']."</td>
                             <td>".$m['precio']."</td>
                             <td>".$m['categoria']."</td>
