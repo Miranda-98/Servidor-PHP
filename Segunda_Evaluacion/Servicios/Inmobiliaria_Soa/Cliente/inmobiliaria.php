@@ -3,7 +3,7 @@
     'location'=>'http://localhost/practicas_clase/Servidor-PHP/Segunda_Evaluacion/Servicios/Inmobiliaria_Soa/Servidor/serverSOAP.php');
     try{
         $cliente = new SoapClient(null,$options);
-        $response = $cliente->mostrar('Norte');
+        $response = $cliente->mostrar('Sur');
      
          // "pepe -> " . $response;
 
@@ -39,7 +39,7 @@
 
 
 
-        $response2 = $cliente->cantidad('Norte');
+        $response2 = $cliente->cantidad('Sur');
         echo "Con el filtro aplicado hay ". $response2[0] . " viviendas";
         // $cliente = new SoapClient(null, $options);
         // $response = $cliente->sumar(2,5);
