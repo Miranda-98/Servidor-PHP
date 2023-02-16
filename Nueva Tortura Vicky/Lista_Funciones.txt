@@ -1,3 +1,0 @@
-mostrar publicaciones -> ok
-eliminar publicaciones -> ok
-CLASE BUILDER/buscador

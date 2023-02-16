@@ -23,7 +23,6 @@ class Usuario extends Publicacion
         return $contraseña;
     }
 
-
     function crearUsuario($nombre)
     {
         try {

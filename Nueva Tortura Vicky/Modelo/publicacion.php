@@ -8,16 +8,6 @@
 
         function __construct($conexion)
         {
-            // $this->id = $id;
-            // $this->tipo = $tipo;
-            // $this->zona = $zona;
-            // $this->direccion = $direccion;
-            // $this->ndormitorios = $ndormitorios;
-            // $this->precio = $precio;
-            // $this->tamano = $tamano;
-            // $this->extras = $extras;
-            // $this->observaciones = $observaciones;
-            // $this->fecha_anuncio = $fecha_anuncio;
             parent::__construct($conexion);
             $this->conexion = parent::conectar();
         }
@@ -229,12 +219,22 @@
             
             echo "<div id='barraPagina'>";
             $total = ceil($num['cantidad']/$limite);
+            
             for ($i=1; $i <= $total; $i++) {
+                
                 if($i<$total)
                     echo "<a href='?pgnActual=".$i."&x=".$total."'>".$i."</a> - ";
                 else
-                    echo "<a href='?pgnActual=".$i."&x=".$total."'>".$i."</a> ";;
+                    echo "<a href='?pgnActual=".$i."&x=".$total."'>".$i."</a> ";
+
+                //echo "Estas en la pagina " .$i. " de $total.";
             }
+            //echo "Mostrando $paginacion de $limite<br/>";
+            if(isset($_GET['pgnActual']))
+                echo "<br/>Estas en la pagina " .$_GET['pgnActual']. " de $total.";
+            else 
+                echo "<br/>Estas en la pagina 1 de $total.";
+
             echo "</div>";
             return $publicaciones;
 

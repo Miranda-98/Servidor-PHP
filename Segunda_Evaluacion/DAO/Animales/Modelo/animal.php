@@ -1,12 +1,13 @@
 <?php
-    require_once 'DataSource.php';
-    
-    class Animal extends DataSource {
-        private $id, $nombre, $especie, $raza, $genero, $color, $edad, $conexion;
+    //require_once 'DataSource.php';
+    require_once 'conexion.php';
 
-        function __construct($id, $nombre, $especie, $raza, $genero, $color, $edad)
-        {
-            parent::__construct($conexion);
+    class Animal extends Conexion {
+        private $id, $nombre, $especie, $raza, $genero, $color, $edad, $conexión;
+        static $TABLA = 'animal';
+
+        function __construct ($id, $nombre, $especie, $raza, $genero, $color, $edad, $conexion){
+            parent::__construct(self::$TABLA, $conexion);
             $this->id=$id;
             $this->nombre=$nombre;
             $this->especie=$especie;
@@ -14,6 +15,8 @@
             $this->$genero=$genero;
             $this->color=$color;
             $this->edad=$edad;
+            $this->conexion=$conexion;
+    
         }
 
         function __get($valor)

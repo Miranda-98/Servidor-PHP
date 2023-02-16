@@ -1,0 +1,3 @@
+BusinessObject -> lógica de negocio de la aplicación 
+DAO -> lógica de acceso a la base de datos y la conexión a la base de datos
+TransferObject -> clases y getters and setters
