@@ -11,6 +11,7 @@
         session_start();
 
         // Crear un array y guardarlo en la sesión
+        
         $mi_array = array('manzana', 'banana', 'naranja');
         $_SESSION['frutas'] = $mi_array;
 
@@ -44,12 +45,24 @@
         print_r($mi_array2);
         echo "<br/>";
 
+        
+        // obtener el array de la sesión
+        $mi_array = $_SESSION['frutas'];
+
+        // agregar un nuevo elemento al final del array
+        $mi_array[] = 'nuevo pera';
+
+        // guardar el array modificado en la sesión
+        $_SESSION['frutas'] = $mi_array;
+
+
         // implode -> convierte array en cadena de texto separado por comas
         $string = implode(',', $_SESSION['frutas']);
         echo "<br/> implode -> ";
         echo $string;
         echo "<br/>";
 
+        
         // explode -> convierte una cadena de texto en un array
         $array = explode(',', $string);
         echo "<br/> explode -> ";

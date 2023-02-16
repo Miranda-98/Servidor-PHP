@@ -40,6 +40,7 @@
                 $f = $animal->__get('color');
                 $g = $animal->__get('edad');
                 echo "pepe -> " . $g;
+                
                 $sql = "INSERT INTO animal (id, nombre, especie, raza, genero, color, edad) 
                     VALUES (:A,:B,:C,:D,:E,:F,:G)";
                 $stmt = $this->conexion->prepare($sql);
